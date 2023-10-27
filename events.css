@@ -8,19 +8,6 @@
   box-sizing: border-box;
 }
 
-html {
-  background-color: #ecf9ff;
-}
-
-body {
-  color: #272727;
-  font-family: 'Quicksand', serif;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 0;
-  padding: 1rem;
-}
-
 .main{
   max-width: 1200px;
   margin: 0 auto;
@@ -71,12 +58,6 @@ img {
   display: flex;
   padding: 1rem;
   width: 100%; /* Use 100% width for consistent card width */
-}
-
-@media (min-width: 40rem) {
-  .cards_item {
-    width: 50%;
-  }
 }
 
 @media (min-width: 56rem) {
@@ -135,6 +116,26 @@ img {
 
 
 /* Event Card Styling */
+.ecards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ecards_item {
+  display: flex;
+  padding-bottom: 2rem;
+  width: 100%; /* Use 100% width for consistent card width */
+}
+
+@media (min-width: 56rem) {
+  .ecards_item {
+    width: 33.3333%;
+  }
+}
+
 .eventcontainer {
   display: flex;
   justify-content: center;
@@ -209,16 +210,36 @@ img {
     padding: 15px 30px;
     font-size: 18px;
     background-color: transparent; 
-    color: #000000; 
+    color: #ffffff; 
     font-size: 20px;
-    border: 1px solid #000000;
+    border: 1px solid #ffffff;
     transition: all 0.3s; 
+}
+
+.ecard_btn {
+  position: relative;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: transparent; 
+  color: #000000; 
+  font-size: 20px;
+  border: 1px solid #000000;
+  transition: all 0.3s; 
 }
 
 .card_btn:hover {
     border: 2px solid #008756; 
     color: #008756; 
     background-color: transparent;; 
+}
+
+.ecard_btn:hover {
+  border: 2px solid #008756; 
+  color: #008756; 
+  background-color: transparent;; 
 }
 
 /* Style the tab buttons */
