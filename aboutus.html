@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Profile</title>
+    <title>About Us</title>
     
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    
 
     <style>
          .navbar-nav {
@@ -20,7 +19,7 @@
     
         body {
             overflow-x: hidden;
-            background-color: #74B9A0;
+            background-color: #D9D9D9;
         }
     
         .carousel-caption {
@@ -61,58 +60,18 @@
             padding: 10px 20px;
             cursor: pointer;
         }
-
-        /* Edit Profile Styling */
-        .nav-borders {
-            border-bottom: 1px solid #41804F;
-        }
-
-        .card-header {
-            background-color: #41804F;
-            color: white;
-        }
-
-        .card {
-            border: none;
-        }
-
-        .img-account-profile {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        .btn-primary {
-            background-color: #41804F;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background-color: #2d5f2f;
-        }
-
-        .small.mb-1 {
-            color: #8b96a5;
-        }
-
-        input.form-control {
-            border: 1px solid #dcdcdc;
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        .form-control:focus {
-            border-color: #41804F;
-            box-shadow: 0 0 5px rgba(65, 128, 79, 0.2);
-        }
-
-    /* Additional styling if needed */
-</style>
-
         
+        .box-container {
+            border-radius: 25px;
+            background: #74B9A0;
+            margin: 20px;
+            padding: 25px;
+            width: 320px;
+            height: 80px;
+            text-align: center;
+        }
     
-
+    </style>
 
 </head>
 <body>
@@ -204,107 +163,69 @@
         </div>
     </nav>
 
-<!-- Edit Profile Content -->
-<div class="container-xl px-4 mt-4">
-    <!-- Account page navigation-->
-    <nav class="nav nav-borders">
-        <a class="nav-link active ms-0" href="editprofile.html" target="__blank" style="color: white;">Profile</a>
-        <a class="nav-link" href="#" target="__blank" style="color: white;">Billing</a>
-        <a class="nav-link" href="#" target="__blank" style="color: white;">Security</a>
-    </nav>
-    <hr class="mt-0 mb-4" style="border-color: white;">
+<!-- About Us Content -->
+<div class="container mt-5">
     <div class="row">
-        <div class="col-xl-4">
-            <!-- Profile picture card-->
-            <div class="card mb-4 mb-xl-0">
-                <div class="card-header">Profile Picture</div>
-                <div class="card-body text-center">
-                    <!-- Profile picture image-->
-                    <img class="img-account-profile rounded-circle mb-2" src="images/news/zhanhuiprofile.jpg" alt="">
-                    <!-- Profile picture help block-->
-                    <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
-                    <!-- Profile picture upload button-->
-                    <button class="btn btn-primary" type="button">Upload new image</button>
-                </div>
-            </div>
+        <!-- Image on the left side -->
+        <div class="col-lg-6">
+            <img src="images/aboutus.jpg" alt="About Us Image" class="img-fluid">
         </div>
-        <div class="col-xl-8">
-            <!-- Account details card-->
-            <div class="card mb-4">
-                <div class="card-header">Account Details</div>
-                <div class="card-body">
-                    <form>
-                        <!-- Form Group (username)-->
-                        <div class="mb-3">
-                            <label class="small mb-1" for="inputUsername">Username (how your name will appear to other users on the site)</label>
-                            <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="NgZhanHui">
-                        </div>
-                        <!-- Form Row-->
-                        <div class="row gx-3 mb-3">
-                            <!-- Form Group (first name)-->
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="inputFirstName">First name</label>
-                                <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="Zhan Hui">
-                            </div>
-                            <!-- Form Group (last name)-->
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="inputLastName">Last name</label>
-                                <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" value="Ng">
-                            </div>
-                        </div>
-
-                        <!-- Form Row        
-                        <div class="row gx-3 mb-3">-->
-                            <!-- Form Group (organization name)
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="inputOrgName">Organization name</label>
-                                <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="Start Bootstrap">
-                            </div> -->
-                            <!-- Form Group (location)
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="inputLocation">Location</label>
-                                <input class="form-control" id="inputLocation" type="text" placeholder="Enter your location" value="San Francisco, CA">
-                            </div>
-                        </div>-->
-
-                        <!-- Form Group (email )-->
-                        <div class="mb-3">
-                            <label class="small mb-1" for="inputEmailAddress"> Email </label>
-                            <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="ngzh@gmail.com">
-                        </div>
-
-                        <!-- Form Group (Address)-->
-                        <div class="mb-3">
-                            <label class="small mb-1" for="inputAddress">Address</label>
-                            <input class="form-control" id="inputAddress" type="text" placeholder="Enter your address" value="Blk 123, Bedok North Street 5, #12-34, S(123456)">
-                        </div>
-
-                        <!-- Form Row-->
-                        <div class="row gx-3 mb-3">
-                            <!-- Form Group (phone number)-->
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="inputPhone">Phone number</label>
-                                <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="8123 4567">
-                            </div>
-                            <!-- Form Group (birthday)-->
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="inputBirthday">Birthday</label>
-                                <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="06/10/1988">
-                            </div>
-                        </div>
-                        <!-- Save changes button-->
-                        <button class="btn btn-primary" id="saveChangesBtn">Save changes</button>
-                    </form>
+        <!-- Text content and box containers on the right side -->
+        <div class="col-lg-6">
+            <h2 style="color: #41804F;">WHAT WE DO</h2>
+            <h3>Our mission is to empower those who seek to do good among us.</h3>
+            <p style="color: #1C1C1C;">At Farmer’s Ground our mission is crystal clear: we are dedicated to fostering a sustainable future by bridging the gap between conscientious producers of sustainably farmed produce and eco-conscious consumers.</p>
+            <div class="row">
+                <div class="col-6">
+                    <div class="box-container">
+                        <p id="rcorners1">Make the right choice</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="box-container">
+                        <p id="rcorners1">Connect with local farms</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="box-container">
+                        <p id="rcorners1">Education & News</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="box-container">
+                        <p id="rcorners1">Track your impact</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-
+<br>
+<br>
 
 
     <!-- Bottom Section -->
+
+    <!-- Subscription Container/Nav Bar -->
+    <div class="container-fluid subscription-container" style="background-color: #41804F; color: white;">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Get the latest updates and news delivered to your inbox.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <input type="email" class="form-control" placeholder="Enter your email" />
+            </div>
+            <div class="col-md-4 text-center">
+                <button class="btn btn-light">Subscribe</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
     <div class="row py-5" style="background-color: #fff;">
         <div class="container">
             <div class="row justify-content-evenly">
@@ -400,21 +321,7 @@
             </div>
     </div>
 
-    <!-- Subscription Container/Nav Bar -->
-    <div class="container-fluid subscription-container" style="background-color: #41804F; color: white;">
-        <div class="row">
-            <div class="col-md-4 text-center">
-                <h3>Subscribe to Our Newsletter</h3>
-                <p>Get the latest updates and news delivered to your inbox.</p>
-            </div>
-            <div class="col-md-4 text-center">
-                <input type="email" class="form-control" placeholder="Enter your email" />
-            </div>
-            <div class="col-md-4 text-center">
-                <button class="btn btn-light">Subscribe</button>
-            </div>
-        </div>
-    </div>
+
 
     <!-- Bottom Border -->
     <div class="row text-start py-3" style="background-color: #eff2f4;"> 
@@ -436,78 +343,4 @@
 <!-- Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-<!-- JavaScript for handling form submissions and email validation 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Get references to form elements and existing values
-        const form = document.querySelector('form');
-        const saveChangesBtn = document.getElementById('saveChangesBtn');
-        const inputUsername = document.getElementById('inputUsername');
-        const inputFirstName = document.getElementById('inputFirstName');
-        const inputLastName = document.getElementById('inputLastName');
-        const inputEmailAddress = document.getElementById('inputEmailAddress');
-        const inputAddress = document.getElementById('inputAddress');
-        const inputPhone = document.getElementById('inputPhone');
-        const inputBirthday = document.getElementById('inputBirthday');
-
-        // Save existing values in variables
-        let usernameValue = inputUsername.value;
-        let firstNameValue = inputFirstName.value;
-        let lastNameValue = inputLastName.value;
-        let emailAddressValue = inputEmailAddress.value;
-        let addressValue = inputAddress.value;
-        let phoneValue = inputPhone.value;
-        let birthdayValue = inputBirthday.value;
-
-        // Function to validate email
-        function isEmailValid(email) {
-            const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-            return emailPattern.test(email);
-        }
-
-        // Add an event listener for the "Save changes" button
-        saveChangesBtn.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent the form from submitting
-
-            // Check email validity
-            if (!isEmailValid(inputEmailAddress.value)) {
-                alert('Please enter a valid email address.');
-                return;
-            }
-
-            // Update values if they have changed
-            if (inputUsername.value !== usernameValue) {
-                usernameValue = inputUsername.value;
-            }
-            if (inputFirstName.value !== firstNameValue) {
-                firstNameValue = inputFirstName.value;
-            }
-            if (inputLastName.value !== lastNameValue) {
-                lastNameValue = inputLastName.value;
-            }
-            if (inputEmailAddress.value !== emailAddressValue) {
-                emailAddressValue = inputEmailAddress.value;
-            }
-            if (inputAddress.value !== addressValue) {
-                addressValue = inputAddress.value;
-            }
-            if (inputPhone.value !== phoneValue) {
-                phoneValue = inputPhone.value;
-            }
-            if (inputBirthday.value !== birthdayValue) {
-                birthdayValue = inputBirthday.value;
-            }
-
-            // You can send these updated values to a server for storage or perform any other actions here
-
-            // Provide user feedback that changes have been saved (you can customize this part)
-            alert('Changes have been saved successfully!');
-        });
-    });
-</script> -->
-
-
-
-
-
-</html>
+</html> 
