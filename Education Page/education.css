@@ -1,0 +1,147 @@
+/*Tab Styling*/
+
+.tab {
+    display: flex;
+    width: 80%;
+    margin: 0 auto; 
+    padding: 0;
+    background-color: #41804F;
+    border-radius: 5px;
+}
+
+.tab button {
+    flex: 1; 
+    padding: 10px 20px;
+    background-color: transparent; /* Transparent background */
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    position: relative;
+}
+
+.tab button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 1px; 
+    background-color: #fff; 
+}
+
+.tab button:last-child::after {
+    display: none;
+}
+
+.tab button:hover {
+    background-color: #103315;
+    transition: background-color 0.3s; 
+}
+
+/* Video card styling */
+.video-card {
+  overflow: hidden;
+  padding-bottom: 75%;
+}
+@media(min-width: 768px) {
+  .video-card {
+    padding-bottom:50%;
+  }
+}
+.video-card .hover {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background: rgba(0,0,0,0.75);
+  transition: opacity 0.4s;
+}
+.video-card:hover .hover {
+  opacity: 1;
+}
+
+.video-card .video-title {
+  opacity: 1;
+  background: rgba(0,0,0,0.5); 
+  bottom: 0; 
+  left: 0; 
+  right: 0;
+  cursor: pointer;
+  transition: opacity 0.4s;
+}
+.video-card:hover .video-title {
+  opacity: 0;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    width: 10%; 
+    height: 20%;
+  }
+  
+  .video-card:hover .play-icon {
+    opacity: 1;
+  }
+
+/* styling gamecard */
+.game-card {
+  overflow: hidden;
+  padding-bottom: 10%; /* Adjust this value to make the card 10% of its original size */
+  background: url(images/education/memorybg.png); /* Replace with your game's background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.game-card::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.5); /* Adjust the alpha value (0.5) for the desired darkness */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.game-title {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.8);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+  transition: opacity 0.4s;
+}
+
+.game-card:hover .game-title {
+  opacity: 0;
+}
+
+.start-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  width: 10%;
+  height: 100%;
+}
+
+.game-card:hover .start-icon {
+  opacity: 1;
+}

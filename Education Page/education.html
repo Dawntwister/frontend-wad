@@ -9,8 +9,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
+    <!--Link to CSS Stylesheet-->
+    <link rel="stylesheet" type="text/css" href="education.css" />
+    <!--Link to javascript file-->
+    <script src="education.js"></script>
     <style>
+ 
+        .tab-content {
+            display: none;
+        }
+  
          .navbar-nav {
             display: flex;
             justify-content: space-between;
@@ -139,7 +147,7 @@
                         <a class="nav-link" href="#">Vendors</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">News & Events</a>
+                        <a class="nav-link" href="#">Events & News</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Education Hub</a>
@@ -152,10 +160,150 @@
         </div>
     </nav>
 
-<!-- Insert Content -->
+    <!-- Insert Content -->
+    <div class="main">
+        <!-- Implement a News/Events tab -->
+        <div class="tab">
+            <button id="ExploreTabButton" class="tablinks" onclick="openTab('Explore')">Explore</button>
+            <button id="VideosTabButton" class="tablinks" onclick="openTab('Videos')">Watch</button>
+            <button id="QuizTabButton" class="tablinks" onclick="openTab('Quiz')">Quiz</button>
+            <button id="GamesTabButton" class="tablinks" onclick="openTab('Games')">Games</button>
+        </div>
+    
+        <!-- Explore Tab -->
+        <div id="Explore" class="tab-content" style="display: block;">
+            <h2>Explore Tab</h2>
+            <p>This is the content of the Explore tab.</p>
+        </div>
+    
+        <!-- Videos Tab -->
+        <div id="Videos" class="tab-content">
+            <div class="container py-5">
+                <div class="row">
+                  <div class="col-12 col-md-12 col-lg-6 my-3">
+                    <a href="https://www.youtube.com/watch?v=8q7_aV8eLUE" target="_blank">
+                        <div class="video-card w-100 rounded shadow position-relative" style="background: url(images/education/thumbnail1.JPG); background-size: cover; background-position: center bottom; background-repeat: no-repeat;">
+                        <div class="video-title position-absolute text-white p-3 p-xl-4">
+                            <div class="font-weight-bold pb-2">
+                            What is Carbon Footprint?
+                            </div>
+                            <div class="small">
+                            In this video, simpleshow will be explaining what the term "Carbon Footprint" means and how it impacts Climate Change. Find out how you can reduce your carbon footprint and contribute to a sustainable future.
+                            </div>
+                            <div class="font-weight-bold small pt-2">
+                            Click to Watch the Video&nbsp;&nbsp;&nbsp;<img src="images/education/play.png" alt="Play" class="play-icon">
+                            </div>
+                        </div>
+                        <div class="hover text-white">
+                            <img src="images/education/play.png" alt="Play" class="play-icon">
+                        </div>
+                        </div>
+                    </a>
+                    </div>
+
+                  <div class="col-12 col-md-12 col-lg-6 my-3">
+                    <a href="https://www.youtube.com/watch?v=zCRKvDyyHmI" target="_blank">
+                        <div class="video-card w-100 rounded shadow position-relative" style="background: url(images/education/thumbnail2.JPG); background-size: cover; background-position: center bottom; background-repeat: no-repeat;">
+                        <div class="video-title position-absolute text-white p-3 p-xl-4">
+                            <div class="font-weight-bold pb-2">
+                            Explaining the Circular Economy
+                            </div>
+                            <div class="small">
+                                Explore how through a change in perspective can we re-design the way our economy works - designing products that can be 'made to be made again' and powering the system with renewable energy. With creativity and innovation, we can build a restorative economy.
+                            </div>
+                            <div class="font-weight-bold small pt-2">
+                            Click to Watch the Video&nbsp;&nbsp;&nbsp;<img src="images/education/play.png" alt="Play" class="play-icon">
+                            </div>
+                        </div>
+                        <div class="hover text-white">
+                            <img src="images/education/play.png" alt="Play" class="play-icon">
+                        </div>
+                        </div>
+                    </a>
+                  </div>
+
+                  <div class="col-12 col-md-12 col-lg-6 my-3">
+                    <a href="https://www.youtube.com/watch?v=ntw9ifIy1FE" target="_blank">
+                        <div class="video-card w-100 rounded shadow position-relative" style="background: url(images/education/thumbnail3.JPG); background-size: cover; background-position: center bottom; background-repeat: no-repeat;">
+                        <div class="video-title position-absolute text-white p-3 p-xl-4">
+                            <div class="font-weight-bold pb-2">
+                            Singapore's Local Produce - The Future of Farming
+                            </div>
+                            <div class="small">
+                                Singapore is a small country with limited land and resources. With the goal of producing 30% of its nutritional needs by 2030, find out how Singapore has been tackling this issue by investing in vertical farming and other innovative farming methods.
+                            </div>
+                            <div class="font-weight-bold small pt-2">
+                            Click to Watch the Video&nbsp;&nbsp;&nbsp;<img src="images/education/play.png" alt="Play" class="play-icon">
+                            </div>
+                        </div>
+                        <div class="hover text-white">
+                            <img src="images/education/play.png" alt="Play" class="play-icon">
+                        </div>
+                        </div>
+                    </a>
+                  </div>
+
+                  <div class="col-12 col-md-12 col-lg-6 my-3">
+                    <a href="https://www.youtube.com/watch?v=dcBXmj1nMTQ" target="_blank">
+                        <div class="video-card w-100 rounded shadow position-relative" style="background: url(images/education/thumbnail4.JPG); background-size: cover; background-position: center bottom; background-repeat: no-repeat;">
+                        <div class="video-title position-absolute text-white p-3 p-xl-4">
+                            <div class="font-weight-bold pb-2">
+                            What is Climate Change?
+                            </div>
+                            <div class="small">
+                                Climate change is happening now, and it’s happening fast. The consequences of increasing carbon emissions and rising temperatures are already proving disastrous for communities around the world.
+                            </div>
+                            <div class="font-weight-bold small pt-2">
+                            Click to Watch the Tutorial&nbsp;&nbsp;&nbsp;<img src="images/education/play.png" alt="Play" class="play-icon">
+                            </div>
+                        </div>
+                        <div class="hover text-white">
+                            <img src="images/education/play.png" alt="Play" class="play-icon">
+                        </div>
+                        </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+        </div>
+    
+        <!-- Quiz Tab -->
+        <div id="Quiz" class="tab-content">
+            <h2>Quiz Tab</h2>
+            <p>This is the content of the Quiz tab.</p>
+        </div>
+    
+        <!-- Games Tab -->
+        <div id="Games" class="tab-content">
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-12 my-3">
+                        <a href="MemoryGame/memorygame.html" target="_blank">
+                            <div class="game-card w-100 rounded shadow position-relative">
+                                <div class="game-title position-absolute text-white p-3 p-xl-4">
+                                    <div class="font-weight-bold pb-2">
+                                        Flip and Match
+                                    </div>
+                                    <div class="small">
+                                        Flip and match the sustainability themed cards to test your memory!
+                                    </div>
+                                    <div class="font-weight-bold small pt-2">
+                                        Click to Play the Game&nbsp;&nbsp;&nbsp;<img src="images/education/play.png" alt="Play" class="play-icon">
+                                    </div>
+                                </div>
+                                <div class="hover text-black">
+                                    <img src="images/education/start-button.png" alt="start" class="start-icon">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
 
     <!-- Bottom Section -->
-    <div class="row py-5" style="background-color: #fff;">
+    <div class="row pt-5" style="background-color: #fff;">
         <div class="container">
             <div class="row justify-content-evenly">
                 <!-- Company Logo -->
