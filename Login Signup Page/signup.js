@@ -28,8 +28,13 @@ signupButton.addEventListener('click',(e) => {
 
 
     var username = document.getElementById('username').value;
+    var firstname = document.getElementById('firstname').value;
+    var lastname = document.getElementById('lastname').value;
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
+    var phonenumber = document.getElementById('phonenumber').value;
+    var address = document.getElementById('address').value;
+    var birthday = document.getElementById('birthday').value;
 
 
     createUserWithEmailAndPassword(auth, email, password)
@@ -40,6 +45,11 @@ signupButton.addEventListener('click',(e) => {
         set(ref(database, 'users/' + user.uid), {
             username: username,
             email: email,
+            firstname: firstname,
+            lastname: lastname,
+            phonenumber: phonenumber,
+            address: address,
+            birthday: birthday,
             
         })
         alert('Account created! Proceed to sign in to your account.');
