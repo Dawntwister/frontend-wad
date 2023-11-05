@@ -60,6 +60,11 @@
             padding: 10px 20px;
             cursor: pointer;
         }
+        .square-image {
+            width: 150px; /* Adjust the width as needed */
+            height: 150px; /* Adjust the height as needed */
+            object-fit: cover; /* Preserve aspect ratio and cover the square area */
+        }
     
     </style>
 
@@ -163,7 +168,7 @@
                 <div class="card-body p-4">
                     <div class="d-flex text-black">
                         <div class="flex-shrink-0">
-                            <img src="images/news/zhanhuiprofile.jpg" alt="Generic placeholder image" class="img-fluid rounded-circle" style="width: 180px;">
+                            <img src="images/profile/zhanhuiprofile.jpg" alt="Generic placeholder image" class="img-fluid rounded-circle" style="width: 180px;">
                         </div>
                         <div class="flex-grow-1 ms-3">
                             <h5 class="mb-1" style="font-weight: bold;" id="username">NgZhanHui</h5>
@@ -185,35 +190,106 @@
 <div class="container py-4">
     <div class="row">
         <div class="col-md-6">
-            <div class="card mb-4">
+            <div class="card mb-4" style="background-color: #41804F;">
                 <div class="card-body">
                     Box 1
                 </div>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="card mb-4">
+            <div class="card mb-4" style="background-color: #41804F;">
                 <div class="card-body">
                     Box 2
                 </div>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="card mb-4">
+            <div class="card mb-4" style="background-color: #41804F;">
                 <div class="card-body">
-                    Box 3
+                    <h5 class="card-title" style="font-weight: bold; color: white;">Your Favorite Food</h5>
+                    <div class="row">
+                        <div class="col-4">
+                            <p style="font-weight: bold; color: white;">Rank</p>
+                        </div>
+                        <div class="col-4">
+                            <p style="font-weight: bold; color: white;">Name</p>
+                        </div>
+                        <div class="col-4">
+                            <p style="font-weight: bold; color: white;">Category</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <p style="color: white;">1</p>
+                        </div>
+                        <div class="col-4">
+                            <p style="color: white;">Lettuce</p>
+                        </div>
+                        <div class="col-4">
+                            <p style="color: white;">Fresh produce</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <p style="color: white;">2</p>
+                        </div>
+                        <div class="col-4">
+                            <p style="color: white;">Cabbage</p>
+                        </div>
+                        <div class="col-4">
+                            <p style="color: white;">Fresh produce</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <p style="color: white;">3</p>
+                        </div>
+                        <div class="col-4">
+                            <p style="color: white;">Mackerel</p>
+                        </div>
+                        <div class="col-4">
+                            <p style="color: white;">Seafood</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <p style="color: white;">4</p>
+                        </div>
+                        <div class="col-4">
+                            <p style="color: white;">Oranges</p>
+                        </div>
+                        <div class="col-4">
+                            <p style="color: white;">Fresh produce</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="card mb-4">
+            <div class="card mb-4" style="background-color: #41804F;">
                 <div class="card-body">
-                    Box 4
+                    <h5 class="card-title" style="font-weight: bold; color: white; margin-bottom: 20px;">Your Favorite Vendor</h5>
+                    <!-- Data for Your Favorite Vendor can be added here -->
+                    <div class="row">
+                        <div class="col-4 text-center">
+                            <img src="images/profile/garden farm.png" alt="Image 1" class="img-fluid square-image">
+                            <p style="color: white;">The Garden Farm Pte. Ltd.</p>
+                        </div>
+                        <div class="col-4 text-center">
+                            <img src="images/profile/fishfarmer.jpg" alt="Image 2" class="img-fluid square-image">
+                            <p style="color: white;">The Fish Farmer</p>
+                        </div>
+                        <div class="col-4 text-center">
+                            <img src="images/profile/yilifarm.jpg" alt="Image 3" class="img-fluid square-image">
+                            <p style="color: white;">Yili Farm</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 
     <!-- Bottom Section -->
