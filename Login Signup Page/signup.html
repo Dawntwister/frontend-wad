@@ -1,185 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme = "light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>Home</title>
     
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!--Link to firebase javascript file
-    <script src="firebase.js"></script>-->
-
+    <link rel="stylesheet" href="../stylesheet_master.css">
+    
+    <!-- VUE -->
+    <script src="https://unpkg.com/vue@next"></script>
+    
+    <!-- Theme switching functionality -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="themeswitch.js"></script>
+    <!-- End theme switching functionality -->
+    
+    <!-- ENTER ADDITIONAL SCRIPTS-->
     <style>
-         .navbar-nav {
-            display: flex;
-            justify-content: space-between;
-            flex-grow: 1;
-        }
-    
-        body {
-            overflow-x: hidden;
-            background-color: #D9D9D9;
-        }
-    
-        .carousel-caption {
-            background: linear-gradient(to right, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 1) 100%);
-            padding: 20px;
-            text-align: left;
-        }
+       .signup-header {
+           font-size: 24px; /* Adjust the font size as needed */
+           font-weight: bold;
+           text-align: center;
+       }
+       .separator {
+           display: flex;
+           align-items: center;
+           text-align: center;
+       }
 
-        .nav-link:hover{
-            color: #41804F;
-            font-weight: bold;
-        }
-        
-        .subscription-container {
-            padding: 20px;
-        }
+       .separator::before,
+       .separator::after {
+           content: '';
+           flex: 1;
+           border-bottom: 1px solid #000;
+       }
 
-        .subscription-container h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
+       .separator:not(:empty)::before {
+           margin-right: .25em;
+       }
 
-        .subscription-container p {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        .subscription-container input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-
-        .subscription-container button {
-            background-color: #fff;
-            color: #41804F;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-
-        .signup-header {
-            font-size: 24px; /* Adjust the font size as needed */
-            font-weight: bold;
-            text-align: center;
-        }
-        .separator {
-            display: flex;
-            align-items: center;
-            text-align: center;
-        }
-
-        .separator::before,
-        .separator::after {
-            content: '';
-            flex: 1;
-            border-bottom: 1px solid #000;
-        }
-
-        .separator:not(:empty)::before {
-            margin-right: .25em;
-        }
-
-        .separator:not(:empty)::after {
-            margin-left: .25em;
-        }
-    
-    </style>
-
+       .separator:not(:empty)::after {
+           margin-left: .25em;
+       }
+   
+   </style>
+    <!-- END ADDITIONAL SCRIPTS -->
 </head>
 <body>
-    
-    <!-- Header Section - Logo and First Navbar -->
-    <div>
-        <div class="container-fluid text-center" style="background-color: #41804F">
-        
-            <!-- Logo -->
-            <div class="row">
-    
-                <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6
-                d-flex align-items-center
-                justify-content-center
-                justify-content-md-start justify-content-lg-start justify-content-xl-start justify-content-xxl-start">
-                    <img src="../images/logo/logo.png" alt="" class="w-25">
-                </div>
-    
-                <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6
-                d-flex align-items-center
-                justify-content-center
-                justify-content-md-end justify-content-lg-end justify-content-xl-end justify-content-xxl-end">
-                    
-                    <ul class="nav">
-                        
-                        <!-- Nav Items -->
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#" style="color: white;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-toggle-on" viewBox="0 0 16 16">
-                                    <path d="M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10H5zm6 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
-                                </svg>
-                                <span class="fs-8">Dark Mode</span>
-                                
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="color: white;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-                                </svg>
-                                <span class="fs-8">Sign In</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="color: white;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
-                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                                </svg>  
-                                <span class="fs-8">Cart</span>
-                            </a>
-                        </li>
-    
-                    </ul>
-    
-                </div>
-            </div>
-    
-        </div>
-    </div>
-
-    <!-- Secondary Nav bar --> 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container d-flex">
-            <!-- Move Navbar Toggler to the Right -->
-            <button class="navbar-toggler order-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Navbar Links -->
-            <div class="collapse navbar-collapse justify-content-evenly" id="navbarNav">
-                <ul class="navbar-nav">
-                    <!-- Five Navigation Buttons with Even Spacing -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Vendors</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">News & Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Education Hub</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<div id="root">
+    <fg_top_green></fg_top_green>
+    <fg_top_grey></fg_top_grey>
+    <!--  -->
+    <!-- ENTER CONTENT-->
+    <!--  -->
 
 <!-- Sign Up Content -->
 
