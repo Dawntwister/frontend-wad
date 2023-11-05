@@ -20,7 +20,9 @@ const firebaseConfig = {
   
 
 // Initialize Firebase
+// <<<<<<< HEAD
 const app = initializeApp(firebaseConfig);
+
 const db = getDatabase(app);
 
 const dbRef = ref(getDatabase());
