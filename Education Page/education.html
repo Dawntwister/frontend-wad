@@ -162,8 +162,8 @@
 
     <!-- Insert Content -->
     <div class="main">
-        <!-- Implement a News/Events tab -->
-        <div class="tab">
+        <!-- Implement 4 tabs -->
+        <div class="tab" style="width:80%; margin:auto; margin-top:2%;">
             <button id="ExploreTabButton" class="tablinks" onclick="openTab('Explore')">Explore</button>
             <button id="VideosTabButton" class="tablinks" onclick="openTab('Videos')">Watch</button>
             <button id="QuizTabButton" class="tablinks" onclick="openTab('Quiz')">Quiz</button>
@@ -172,13 +172,301 @@
     
         <!-- Explore Tab -->
         <div id="Explore" class="tab-content" style="display: block;">
-            <h2>Explore Tab</h2>
-            <p>This is the content of the Explore tab.</p>
+        <div class="container" style="width: 80%; margin-top:1.5%;">
+            <div class="row">
+                <div class="col-md-6 order-md-1 order-2">
+                    <div class="row">
+                        <div id="explore-banner-text" style="background-color: #41804F; padding: 2.65%; color: white;">
+                            <h1>Learn How to be part of a better future</h1>
+                            <p>Browse our curated educational resources on how you can do your part for sustainability</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 order-md-2 order-1">
+                    <div class="row" style="background-color: #41804F;">
+                        <div id="explore-banner-pic" style="background-image: url('images/education/explore-banner.jpg'); background-size: cover; background-position: center; height:200.5px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="filter-dropdown" style="width:80%; margin:auto; margin-top:2%;">
+            <label for="category-filter">Select Category:</label>
+            <select id="category-filter">
+                <option value="all">All</option>
+                <option value="food">Sustainable Cooking</option>
+                <option value="plants">Sustainable Farming</option>
+                <option value="transport">Sustainable Transport</option>
+            </select>
+        </div>
+
+        <div class="col-12">
+        <div id="explore-cards">
+            <ul class="ecards">
+                <li class="ecards_item" data-category="food">
+                    <div class="explorecontainer">
+                        <div class="img-wrapper">
+                          <img src="images/education/foodscrap.jpg" alt="">
+                          <div class="img-detail">
+                            <div class="header">
+                              <div class="left-side">
+                                <strong>Food Scraps: Mastering the art of circular cooking</strong>
+                                <p></p>
+                              </div>
+                              <div class="right-side">
+                                <img src="images/education/mini-compost.jpg" alt="">
+                              </div>
+                            </div>
+                            
+                            <div class="content">
+                                <p>Food scraps are no joking matter, every year billions of 
+                                    tonnes of perfectly edible food are wasted and thrown away.
+                                    Here are some ways you can put them to work!</p>
+                            </div>
+                            <div>
+                                <button class="btn ecard_btn">Read More</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </li>
+
+                <li class="ecards_item" data-category="plants">
+                    <div class="explorecontainer">
+                        <div class="img-wrapper">
+                          <img src="images/education/pesticide.jpg" alt="">
+                          <div class="img-detail">
+                            <div class="header">
+                              <div class="left-side">
+                                <strong>10 Natural Pesticides and their respective uses</strong>
+                                <p></p>
+                              </div>
+                              <div class="right-side">
+                                <img src="images/education/mini-pesticide.jpg" alt="">
+                              </div>
+                            </div>
+                            
+                            <div class="content">
+                                <p>Discover these 10 natural sources of protection for your 
+                                    flowers and rooftop gardens, guaranteed to keep those
+                                    hungry critters away!</p>
+                            </div>
+                            <div>
+                                <button class="btn ecard_btn">Read More</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </li>
+
+                <li class="ecards_item" data-category="transport">
+                    <div class="explorecontainer">
+                        <div class="img-wrapper">
+                          <img src="images/education/import.jpg" alt="">
+                          <div class="img-detail">
+                            <div class="header">
+                              <div class="left-side">
+                                <strong>Reduce Carbon Footprint: Refuse Imported Goods</strong>
+                                <p></p>
+                              </div>
+                              <div class="right-side">
+                                <img src="images/education/mini-container.jpg" alt="">
+                              </div>
+                            </div>
+                            
+                            <div class="content">
+                                <p>Imported goods contribute higher carbon footprint than locally produced goods. 
+                                    Find out how you can reduce your carbon footprint by supporting local!</p>
+                            </div>
+                            <div>
+                                <button class="btn ecard_btn">Read More</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </li>
+
+                <li class="ecards_item" data-category="food">
+                    <div class="explorecontainer">
+                        <div class="img-wrapper">
+                          <img src="images/education/gordon.jpg" alt="">
+                          <div class="img-detail">
+                            <div class="header">
+                              <div class="left-side">
+                                <strong>Rordon Gamsey: How a Masterchef 
+                                    Turns Food Waste Delicious</strong>
+                                <p></p>
+                              </div>
+                              <div class="right-side">
+                                <img src="images/education/mini-gordon.jpg" alt="">
+                              </div>
+                            </div>
+                            
+                            <div class="content">
+                                <p>Masterchef Rordon Gamsey walks us through how to turn
+                                    your daily vegetable scraps and trimmings into a delicious 
+                                    datenight meal.</p>
+                            </div>
+                            <div>
+                                <button class="btn ecard_btn">Read More</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </li>
+                <li class="ecards_item" data-category="plants">
+                    <div class="explorecontainer">
+                        <div class="img-wrapper">
+                          <img src="images/education/tomatoes.jpg" alt="">
+                          <div class="img-detail">
+                            <div class="header">
+                              <div class="left-side">
+                                <strong>You Guide to Growing  Tomatoes and 
+                                    Cherry Tomatoes</strong>
+                                <p></p>
+                              </div>
+                              <div class="right-side">
+                                <img src="images/education/mini-tomato.jpg" alt="">
+                              </div>
+                            </div>
+                            
+                            <div class="content">
+                                <p>Join our Masterclass on growing your favourite fruits and 
+                                    vegetables!</p>
+                            </div>
+                            <div>
+                                <button class="btn ecard_btn">Read More</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </li>
+
+                <li class="ecards_item" data-category="transport">
+                    <div class="explorecontainer">
+                        <div class="img-wrapper">
+                          <img src="images/education/mrt.jpg" alt="">
+                          <div class="img-detail">
+                            <div class="header">
+                              <div class="left-side">
+                                <strong>Private Transportation or Public Transportation?</strong>
+                                <p></p>
+                              </div>
+                              <div class="right-side">
+                                <img src="images/education/mini-car.jpg" alt="">
+                              </div>
+                            </div>
+                            
+                            <div class="content">
+                                <p>While travelling private can brings about convenience, it is very detrimental
+                                    to the atmosphere. By going with public transport, you can reduce your carbon 
+                                    footprint by up to 50%!
+                                </p>
+                            </div>
+                            <div>
+                                <button class="btn ecard_btn">Read More</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </li>
+            
+                <li class="ecards_item" data-category="food">
+                    <div class="explorecontainer">
+                        <div class="img-wrapper">
+                          <img src="images/education/salad.jpg" alt="">
+                          <div class="img-detail">
+                            <div class="header">
+                              <div class="left-side">
+                                <strong>20 Recipes for Minimal Effort, Fresh 
+                                    Salads and Healthy Bodies</strong>
+                                <p></p>
+                              </div>
+                              <div class="right-side">
+                                <img src="images/education/mini-lettuce.jpg" alt="">
+                              </div>
+                            </div>
+                            
+                            <div class="content">
+                                <p>Eating healthy does not have to be difficult! Here are 20 
+                                    easy recipes to follow along with at home using common
+                                    ingredients.
+                                    </p>
+                            </div>
+                            <div>
+                                <button class="btn ecard_btn">Read More</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </li>
+
+                <li class="ecards_item" data-category="plants">
+                    <div class="explorecontainer">
+                        <div class="img-wrapper">
+                          <img src="images/education/fertiliser.jpg" alt="">
+                          <div class="img-detail">
+                            <div class="header">
+                              <div class="left-side">
+                                <strong>The Secrets of Fertilizers and how they affect plants!</strong>
+                                <p></p>
+                              </div>
+                              <div class="right-side">
+                                <img src="images/education/mini-fertiliser.jpg" alt="">
+                              </div>
+                            </div>
+                            
+                            <div class="content">
+                                <p>Fertilisers can work magic on our plants, learn how to  use 
+                                    them responsibly for the sake of our plants and 
+                                    environment!</p>
+                            </div>
+                            <div>
+                                <button class="btn ecard_btn">Read More</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </li>
+
+                <li class="ecards_item" data-category="transport">
+                    <div class="explorecontainer">
+                        <div class="img-wrapper">
+                          <img src="images/education/LSA.jpg" alt="">
+                          <div class="img-detail">
+                            <div class="header">
+                              <div class="left-side">
+                                <strong>How do products travel over the world?</strong>
+                                <p></p>
+                              </div>
+                              <div class="right-side">
+                                <img src="images/education/mini-lsa.jpg" alt="">
+                              </div>
+                            </div>
+                            
+                            <div class="content">
+                                <p>Find out how commercial products travel over the world to get to you! 
+                                    In this article, we cover shipment of goods via Air, Land and Sea. 
+                                    Discover how each mode of transportation affect their carbon footprint!</p>
+                            </div>
+                            <div>
+                                <button class="btn ecard_btn">Read More</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </li>
+
+              </ul>
+            </ul>
+          </div>
+        </div>
         </div>
     
         <!-- Videos Tab -->
         <div id="Videos" class="tab-content">
-            <div class="container py-5">
+            <div class="container" style="width: 80%; margin-top:5px;">
                 <div class="row">
                   <div class="col-12 col-md-12 col-lg-6 my-3">
                     <a href="https://www.youtube.com/watch?v=8q7_aV8eLUE" target="_blank">
@@ -269,13 +557,23 @@
     
         <!-- Quiz Tab -->
         <div id="Quiz" class="tab-content">
-            <h2>Quiz Tab</h2>
-            <p>This is the content of the Quiz tab.</p>
-        </div>
-    
+            <div id="quizDescription">
+              <div class="center-vertically">
+                <div id="quiz-heading">
+                  <h2>Sustainability Quiz</h2>
+                </div>
+                <div id="quiz-paragraph">
+                  <p>Ready to put what you have learnt into test? Take on our sustainability-themed quiz to find out how much you know about sustainability issues happening around the world!</p>
+                </div>
+              </div>
+            </div>
+            <button id="startQuizButton" onclick="startQuiz()">Start Quiz</button>
+            <iframe id="quizFrame" src="quiz.html" frameborder="0" width="100%" height="400px" style="display: none;"></iframe>
+          </div>
+            
         <!-- Games Tab -->
         <div id="Games" class="tab-content">
-            <div class="container py-5">
+            <div class="container" style="width: 80%; margin-top:5px;">
                 <div class="row">
                     <div class="col-12 my-3">
                         <a href="MemoryGame/memorygame.html" target="_blank">

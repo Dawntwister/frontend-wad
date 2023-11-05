@@ -20,6 +20,36 @@ function openTab(tabName) {
     document.getElementById(tabName + "TabButton").classList.add("active");
 }
 
+function startQuiz() {
+    // Hide the quiz description text and "Start Quiz" button
+    document.getElementById("quizDescription").style.display = "none";
+    document.getElementById("startQuizButton").style.display = "none";
+
+    // Show the quiz content
+    var quizFrame = document.getElementById("quizFrame");
+    quizFrame.style.display = "block";
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const categoryFilter = document.getElementById("category-filter");
+    const ecards = document.querySelectorAll(".ecards_item");
+
+    categoryFilter.addEventListener("change", function() {
+        const selectedCategory = this.value;
+
+        ecards.forEach(item => {
+            const itemCategory = item.getAttribute("data-category");
+            if (selectedCategory === "all" || itemCategory === selectedCategory) {
+                item.style.display = "block";
+            } else {
+                item.style.display = "none";
+            }
+        });
+    });
+});
+
+
+
 // By default, display the "Explore" tab with other tabs hidden
 document.getElementById("Explore").style.display = "block";
 document.getElementById("ExploreTabButton").classList.add("active");
