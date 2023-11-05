@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme = "light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="stylesheet_master.css">
+    
+    <!-- VUE -->
+    <script src="https://unpkg.com/vue@next"></script>
+    
+    <!-- Theme switching functionality -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="themeswitch.js"></script>
+    <!-- End theme switching functionality -->
+    
+    <!-- ENTER ADDITIONAL SCRIPTS-->
+    <style>
+       .container-payment{
+           background-color: #ffffff;
+           border: 10px solid #74B9A0;
+           border-radius: 1.5rem;
+       }
+   
+   </style>
+    <!-- END ADDITIONAL SCRIPTS -->
+</head>
+<body>
+<div id="root">
+    <div id="app">
+    <fg_top_green></fg_top_green>
+    <fg_top_grey></fg_top_grey>
+    <!--  -->
+    <!-- ENTER CONTENT-->
+    <!--  -->
+
+    <div class="container-fluid py-3 px-5 lightgreencontainer">
+
+        <!-- Row 1 -->
+        <div class="row container-payment p-2">
+            <h1>My Cart (3)</h1>
+        </div>
+        <!-- End Row 1 -->
+
+
+        <!-- Row 2 -->
+        <div class="row">
+            <!-- Col 1 (Item List) -->
+            <div class="col-lg-8 col-sm-12 container-payment">
+                
+                <!-- Vue components -->
+                <cart-product-card name="Broccoli" price="$2.02" weight="300g" quantity="0" image="listing_broccoli.png"></cart-product-card>
+                <cart-product-card name="Broccoli" price="$2.02" weight="300g" quantity="0" image="listing_broccoli.png"></cart-product-card>
+                <cart-product-card name="Broccoli" price="$2.02" weight="300g" quantity="0" image="listing_broccoli.png"></cart-product-card>
+                <cart-product-card name="Broccoli" price="$2.02" weight="300g" quantity="0" image="listing_broccoli.png"></cart-product-card>
+
+                
+
+                <!-- Bottom Buttons -->
+                <div class="row">
+                    <div class="col ps-5 pb-3">
+                        <button class="btn btn-primary">Back to shop</button>
+                    </div>
+                    <div class="col text-end pe-5 pb-3">
+                        <button class="btn btn-outline-primary">Remove all</button>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <!-- End Col 1 -->
+
+
+            <!-- Col 2 (Payment) -->
+            <div class="col-lg-4 col-sm-12 container-payment p-2">
+                <div class="row p-2">
+                    <!-- Subtotal -->
+                    <div class="row">
+                        <div class="col text-start">
+                            <h3>Subtotal:</h3>
+                        </div>
+                        <div class="col text-end">
+                            <h3>$40.02</h3>
+                        </div>
+                    </div>
+
+                    <!-- Discount -->
+                    <div class="row p-2">
+                        <div class="col text-start">
+                            <h3>Discount:</h3>
+                        </div>
+                        <div class="col text-end">
+                            <h3 style="color: red;">-$2.01</h3>
+                        </div>
+                    </div>
+
+                    <!-- Tax -->
+                    <div class="row p-2">
+                        <div class="col text-start">
+                            <h3>Discount:</h3>
+                        </div>
+                        <div class="col text-end">
+                            <h3 style="color: green;">+$0.20</h3>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="row text-center">
+                    <div class="col">
+                        <button class="btn btn-success w-75 p-3"><h3>Checkout</h3></button>
+                    </div>
+                </div>
+                
+                
+
+
+            </div>
+        </div>
+        <!-- End Row 2 -->
+
+        <!-- Row 3 -->
+        <div class="row container-payment align-items-center text-center p-2">
+            
+            <div class="col text-start">
+                <h3>
+                    Our Services
+                </h3>
+            </div>
+
+            <div class="col">
+                <h5>
+                    Secure Payment
+                </h5>
+            </div>
+
+            <div class="col">
+                <h5>
+                    Fast Customer Support
+                </h5>
+            </div>
+
+            <div class="col">
+                <h5>
+                    Fast Delivery
+                </h5>
+            </div>
+        </div>
+        <!-- End Row 3 -->
+
+        <!-- Row 4 -->
+        <div class="row container-payment">
+            <div class="row">
+                <h3>Recently Purchased</h3>
+            </div>
+            <div class="row"></div>
+        </div>
+        <!-- End Row 4 -->
+
+
+
+    </div>
+
+
+
+
+    <!--  -->
+    <!-- END CONTENT -->
+    <!--  -->
+    <fg_bot></fg_bot>
+    </div>
+</div>
+</body>
+
+<!-- ENTER ADDITIONAL SCRIPTS -->
+<!-- Vue -->
+<script src="cart.js"></script>
+
+<!-- Product List -->
+<script src="items.js"></script>
+
+<!-- END ADDITIONAL SCRIPTS -->
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/color-modes.js"></script>
+<script src="components.js"></script>
+<script src="cart.js"></script>
+</html>

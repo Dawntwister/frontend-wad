@@ -61,6 +61,13 @@
     .btn-success-outline:focus{
         color: white;
     }
+    .container-payment{
+        border: 10px solid;
+        background-color: white;
+        border-color: #74B9A0;
+        border-radius: 1.5rem;
+        color: black;
+    }
     }
     /* End Light Mode */
     /* Dark Mode */
@@ -125,8 +132,15 @@
     .btn-success-outline:focus{
         color: white;
     }
+    .container-payment{
+        border: 10px solid;
+        background-color: ;
+        border-color: black;
+        border-radius: 1.5rem;
+        color: black;
+    }
     
-    
+
     }
     /* End Dark Mode */
 
