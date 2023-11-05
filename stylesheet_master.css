@@ -1,0 +1,117 @@
+
+/* Light Mode */
+[data-bs-theme="light"] {
+    --bs-body-color: var(--bs-black);
+    --bs-body-color-rgb: #{to-rgb($black)};
+    --bs-body-bg: var(--bs-white);
+    --bs-body-bg-rgb: #{to-rgb($white)};
+    --bs-tertiary-bg: #{$blue-600};
+    
+    .dropdown-menu { 
+        background-color: white; 
+    }
+    
+    .darkgreencontainer{
+        background-color: #103315;
+        color: white;
+    }
+    .greencontainer{
+        background-color: #41804F;
+        color: white;
+    }
+    .lightgreencontainer{
+        background-color: #74b9a0;
+        color: white;
+    }
+    .whitecontainer{
+        background-color: white;
+        color: #103315;
+    }
+    
+    
+    .navbar .nav-link{
+        color: #000;
+    }
+    
+    .navbar .nav-link:hover{
+        color: #41804f;
+    }
+    
+    .nav-top:hover{
+        color: #74b9a0;
+    }
+    
+    .nav-link{
+        color: white;
+    }
+    
+    .nav-top:focus{
+        color: white;
+    }
+    
+    .btn-success-outline{
+        color: white;
+    }
+    .btn-success-outline:hover{
+        color: #74b9a0;
+    }
+    .btn-success-outline:focus{
+        color: white;
+    }
+    }
+    /* End Light Mode */
+    /* Dark Mode */
+    [data-bs-theme="dark"] {
+    --bs-body-color: var(--bs-white);
+    --bs-body-color-rgb: #{to-rgb($white)};
+    --bs-body-bg: var(--bs-darkgreen);
+    --bs-body-bg-rgb: #{to-rgb($darkgreen)};
+    --bs-tertiary-bg: #{$blue-600};
+    
+    .dropdown-menu { 
+        background-color: #103315; 
+    }
+    
+    .darkgreencontainer{
+        background-color: #103315;
+        color: white;
+    }
+    .greencontainer{
+        background-color: #103315;
+        color: white;
+    }
+    .lightgreencontainer{
+        background-color: #74b9a0;
+        color: white;
+    }
+    .whitecontainer{
+        background-color: white;
+        color: #103315;
+    }
+    
+    
+    .navbar .nav-link{
+        color: white;
+    }
+    
+    .navbar .nav-link:hover{
+        color: #74b9a0;
+    }
+    
+    .nav-top:hover{
+        color: #74b9a0;
+    }
+    
+    .nav-link{
+        color: white;
+    }
+    
+    .nav-top:focus{
+        color: white;
+    }
+    
+    a:hover{
+        color: #74b9a0;
+    }
+    }
+    /* End Dark Mode */
