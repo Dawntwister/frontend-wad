@@ -1,12 +1,13 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
-import { getDatabase, ref } from 'https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js';
+import { getDatabase,ref, child, get } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js";
 
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyCcH1GXtjhCUF6Mi43YMz9sJ22H4Xqn5tM",
   authDomain: "farmers-ground---wad-2.firebaseapp.com",
@@ -15,23 +16,20 @@ const firebaseConfig = {
   storageBucket: "farmers-ground---wad-2.appspot.com",
   messagingSenderId: "16212184222",
   appId: "1:16212184222:web:87c88f3d7a15b82d147f8f"
-};
+  };
+  
 
 // Initialize Firebase
+// <<<<<<< HEAD
 const app = initializeApp(firebaseConfig);
+
 const db = getDatabase(app);
 
-// Get a database reference to our posts
-const ref = db.ref('server/saving-data/fireblog/posts');
-
-
-displayProfileButton.addEventListener('click',(e) => {
-
-    // Attach an asynchronous callback to read the data at our posts reference
-    ref.on('value', (snapshot) => {
-        console.log(snapshot.val());
-    }, (errorObject) => {
-        console.log('The read failed: ' + errorObject.name);
-    }); 
-
-});    
+const dbRef = ref(getDatabase());
+get(child(dbRef,`users/tester5`)).then((snapshot)=>{
+  if(snapshot.exists()){
+    console.log(snapshot.val());
+  }else{
+    console.log("No data available");
+  }
+});
