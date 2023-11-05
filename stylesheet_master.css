@@ -126,5 +126,23 @@
         color: white;
     }
     
+    
     }
     /* End Dark Mode */
+
+/* Featurettes */
+.featurette-divider {
+    margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+/* rtl:begin:remove */
+
+.featurette-heading {
+    letter-spacing: -.05rem;
+}
+/* End Featurettes */
+
+img{
+    border-radius: 15px;
+}
