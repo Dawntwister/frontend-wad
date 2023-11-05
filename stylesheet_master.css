@@ -28,7 +28,10 @@
         color: #103315;
     }
     
-    
+    .navbar-top{
+        background-color: white;
+    }
+
     .navbar .nav-link{
         color: #000;
     }
@@ -73,7 +76,7 @@
     }
     
     .darkgreencontainer{
-        background-color: #103315;
+        background-color: #red;
         color: white;
     }
     .greencontainer{
@@ -81,12 +84,16 @@
         color: white;
     }
     .lightgreencontainer{
-        background-color: #74b9a0;
+        background-color: black;
         color: white;
     }
     .whitecontainer{
         background-color: white;
         color: #103315;
+    }
+    
+    .navbar-top{
+        background-color: #121212;
     }
     
     
@@ -99,7 +106,7 @@
     }
     
     .nav-top:hover{
-        color: #74b9a0;
+        color: black;
     }
     
     .nav-link{
@@ -109,9 +116,15 @@
     .nav-top:focus{
         color: white;
     }
-    
-    a:hover{
+    .btn-success-outline{
+        color: white;
+    }
+    .btn-success-outline:hover{
         color: #74b9a0;
     }
+    .btn-success-outline:focus{
+        color: white;
+    }
+    
     }
     /* End Dark Mode */
