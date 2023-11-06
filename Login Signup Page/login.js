@@ -31,15 +31,21 @@ loginButton.addEventListener('click',(e) => {
 
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-        // Signed in 
+        // // Signed in 
         const user = userCredential.user;
 
         const dt = new Date();
-        update(ref(database, 'users/' + user.uid), {
-            last_login: dt,
+        // update(ref(database, 'users/' + user.uid), {
+        //     last_login: dt,
+        // })
+        // alert('Successfully login');
+        // // window.location.href = '#';
+
+        getAuth(child(database, 'UsersAuthList/' + userCredential.user.uid)).then((snapshot)=>{
+            if (snapshot.exists) {
+                sessionStorage
+            }
         })
-        alert('Successfully login');
-        // window.location.href = '#';
 
     })
 
