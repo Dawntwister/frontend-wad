@@ -61,6 +61,44 @@
     .btn-success-outline:focus{
         color: white;
     }
+    .container-payment{
+        border: 10px solid;
+        background-color: white;
+        border-color: #74B9A0;
+        border-radius: 1.5rem;
+        color: black;
+    }
+    /* home.html styling */
+    /* This style helps the carousel hover colour functionality */
+    .hover {
+    color: #0000;
+    background: 
+        linear-gradient(90deg,#41804F 50%,black 0) 
+        var(--_p,100%)/200% no-repeat;
+    -webkit-background-clip: text;
+            background-clip: text;
+    transition: .4s;
+    }
+    .hover:hover {
+    --_p: 0%;
+    }
+    .btn-outline-light {
+        color: #0000;
+        border-width: 2px;
+        font-weight: bold;
+        border-color: black;
+        background: 
+            linear-gradient(90deg,#41804F 50%,black 0) 
+            var(--_p,100%)/200% no-repeat;
+        -webkit-background-clip: text;
+                background-clip: text;
+        transition: .4s;
+        }
+        .btn-outline-light:hover {
+        --_p: 0%;
+        border: 2px solid #41804F
+        }
+    /* end home.html styling */
     }
     /* End Light Mode */
     /* Dark Mode */
@@ -71,12 +109,12 @@
     --bs-body-bg-rgb: #{to-rgb($darkgreen)};
     --bs-tertiary-bg: #{$blue-600};
     
-    .dropdown-menu { 
+    .dropdown-menu{ 
         background-color: #103315; 
     }
     
     .darkgreencontainer{
-        background-color: #red;
+        background-color: black;
         color: white;
     }
     .greencontainer{
@@ -88,8 +126,8 @@
         color: white;
     }
     .whitecontainer{
-        background-color: white;
-        color: #103315;
+        background-color: #121212;
+        color: white;
     }
     
     .navbar-top{
@@ -120,13 +158,50 @@
         color: white;
     }
     .btn-success-outline:hover{
-        color: #74b9a0;
+        color: black;
     }
     .btn-success-outline:focus{
         color: white;
     }
-    
-    
+    .container-payment{
+        border: 10px solid;
+        background-color: #505050;
+        border-color: black;
+        border-radius: 1.5rem;
+        color: black;
+    }
+        /* home.html styling */
+    /* This style helps the carousel hover colour functionality */
+    .hover {
+        color: #0000;
+        background: 
+            linear-gradient(90deg,#41804F 50%,white 0) 
+            var(--_p,100%)/200% no-repeat;
+        -webkit-background-clip: text;
+                background-clip: text;
+        transition: .4s;
+        }
+        .hover:hover {
+        --_p: 0%;
+        }
+        .btn-outline-light {
+            color: #0000;
+            border-width: 2px;
+            font-weight: bold;
+            border-color: white;
+            background: 
+                linear-gradient(90deg,#41804F 50%,white 0) 
+                var(--_p,100%)/200% no-repeat;
+            -webkit-background-clip: text;
+                    background-clip: text;
+            transition: .4s;
+            }
+            .btn-outline-light:hover {
+            --_p: 0%;
+            border: 2px solid #41804F
+            }
+        /* end home.html styling */    
+
     }
     /* End Dark Mode */
 
