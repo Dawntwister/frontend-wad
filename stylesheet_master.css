@@ -78,7 +78,7 @@
     --bs-body-bg-rgb: #{to-rgb($darkgreen)};
     --bs-tertiary-bg: #{$blue-600};
     
-    .dropdown-menu { 
+    .dropdown-menu{ 
         background-color: #103315; 
     }
     
@@ -95,8 +95,8 @@
         color: white;
     }
     .whitecontainer{
-        background-color: white;
-        color: #103315;
+        background-color: #121212;
+        color: white;
     }
     
     .navbar-top{
@@ -127,14 +127,14 @@
         color: white;
     }
     .btn-success-outline:hover{
-        color: #74b9a0;
+        color: black;
     }
     .btn-success-outline:focus{
         color: white;
     }
     .container-payment{
         border: 10px solid;
-        background-color: ;
+        background-color: #505050;
         border-color: black;
         border-radius: 1.5rem;
         color: black;
