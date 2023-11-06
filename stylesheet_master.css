@@ -68,6 +68,37 @@
         border-radius: 1.5rem;
         color: black;
     }
+    /* home.html styling */
+    /* This style helps the carousel hover colour functionality */
+    .hover {
+    color: #0000;
+    background: 
+        linear-gradient(90deg,#41804F 50%,black 0) 
+        var(--_p,100%)/200% no-repeat;
+    -webkit-background-clip: text;
+            background-clip: text;
+    transition: .4s;
+    }
+    .hover:hover {
+    --_p: 0%;
+    }
+    .btn-outline-light {
+        color: #0000;
+        border-width: 2px;
+        font-weight: bold;
+        border-color: black;
+        background: 
+            linear-gradient(90deg,#41804F 50%,black 0) 
+            var(--_p,100%)/200% no-repeat;
+        -webkit-background-clip: text;
+                background-clip: text;
+        transition: .4s;
+        }
+        .btn-outline-light:hover {
+        --_p: 0%;
+        border: 2px solid #41804F
+        }
+    /* end home.html styling */
     }
     /* End Light Mode */
     /* Dark Mode */
@@ -83,7 +114,7 @@
     }
     
     .darkgreencontainer{
-        background-color: #red;
+        background-color: black;
         color: white;
     }
     .greencontainer{
@@ -139,7 +170,37 @@
         border-radius: 1.5rem;
         color: black;
     }
-    
+        /* home.html styling */
+    /* This style helps the carousel hover colour functionality */
+    .hover {
+        color: #0000;
+        background: 
+            linear-gradient(90deg,#41804F 50%,white 0) 
+            var(--_p,100%)/200% no-repeat;
+        -webkit-background-clip: text;
+                background-clip: text;
+        transition: .4s;
+        }
+        .hover:hover {
+        --_p: 0%;
+        }
+        .btn-outline-light {
+            color: #0000;
+            border-width: 2px;
+            font-weight: bold;
+            border-color: white;
+            background: 
+                linear-gradient(90deg,#41804F 50%,white 0) 
+                var(--_p,100%)/200% no-repeat;
+            -webkit-background-clip: text;
+                    background-clip: text;
+            transition: .4s;
+            }
+            .btn-outline-light:hover {
+            --_p: 0%;
+            border: 2px solid #41804F
+            }
+        /* end home.html styling */    
 
     }
     /* End Dark Mode */
