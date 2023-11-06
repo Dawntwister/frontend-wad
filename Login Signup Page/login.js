@@ -39,6 +39,7 @@ loginButton.addEventListener('click',(e) => {
             last_login: dt,
         })
         alert('Successfully login');
+        // window.location.href = '#';
 
     })
 

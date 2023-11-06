@@ -53,6 +53,7 @@ signupButton.addEventListener('click',(e) => {
             
         })
         alert('Account created! Proceed to sign in to your account.');
+        window.location.href = 'login.html';
     })
     .catch((error) => {
         const errorCode = error.code;
