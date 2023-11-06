@@ -170,6 +170,7 @@
         border-radius: 1.5rem;
         color: black;
     }
+    
     /*Portion for Sign up & Login */
     .separator::before,
         .separator::after {

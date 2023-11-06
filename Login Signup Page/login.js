@@ -35,17 +35,21 @@ loginButton.addEventListener('click',(e) => {
         const user = userCredential.user;
 
         const dt = new Date();
-        // update(ref(database, 'users/' + user.uid), {
-        //     last_login: dt,
-        // })
-        // alert('Successfully login');
-        // // window.location.href = '#';
-
-        getAuth(child(database, 'UsersAuthList/' + userCredential.user.uid)).then((snapshot)=>{
-            if (snapshot.exists) {
-                sessionStorage
-            }
+        update(ref(database, 'users/' + user.uid), {
+            last_login: dt,
         })
+        alert('Successfully login');
+        // window.location.href = '#';
+
+        // getAuth(child(database, 'UsersAuthList/' + userCredential.user.uid)).then((snapshot)=>{
+        //     if (snapshot.exists) {
+        //         sessionStorage.setItem("user-info", JSON.stringify({
+        //             firstname: snapshot.val().firstname,
+        //             lastname: snapshot.val().lastname
+        //         }))
+        //         sessionStorage.set
+        //     }
+        // })
 
     })
 
