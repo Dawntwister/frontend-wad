@@ -3,6 +3,8 @@ const root = Vue.createApp({
 
     // Data Properties
     data() {
+        return{
+            
         }
     }
 })
@@ -130,97 +132,6 @@ root.component("fg_top_grey",{
             </div>
         </div>
     </nav>
-        `
-})
-
-root.component("fg_section_1",{
-    props:[],
-    template:
-        `     
-        <div class="container-fluid mt-4">
-            <div class="row mt-2">
-                <div class="col-1">
-                    <i class="bi bi-stars"></i>
-                </div>
-                <div class="col w-100">
-                    <p class="text-secondary">Pre-Cleaned</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-1">
-                    <i class="bi bi-star"></i>
-                </div>
-                <div class="col w-100">
-                    <p class="text-secondary">Fresh</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-1">
-                    <i class="bi bi-hand-thumbs-up"></i>
-                </div>
-                <div class="col w-100">
-                    <p class="text-secondary">Vacuum-Packed</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-1">
-                    <i class="bi bi-clipboard-check"></i>
-                </div>
-                <div class="col w-100">
-                    <p class="text-secondary">Shelf Life of 6 days</p>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid mt-5">
-            <div class="row my-5 align-items-start justify-content-end">
-                <button type="button" class="btn btn-outline-primary">
-                    <i class="bi bi-heart"></i>
-                </button>
-            </div>
-        </div>  
-        `
-})
-
-root.component("fg_section_2",{
-    props:[],
-    template:
-        `
-        <div class="card-header bg-secondary">
-            <ul class="nav nav-tabs card-header-tabs" id="detail-list" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#desc-tab-pane" type="button" role="tab" aria-controls="desc-tab-pane" aria-selected="true">Description</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#waste-tab-pane" type="button" role="tab" aria-controls="waste-tab-pane" aria-selected="false">Waste Infomation</button>
-                </li>
-            </ul>
-        </div>
-        `
-})
-
-root.component("fg_section_3",{
-    props:[],
-    template:
-        `
-        <div class="container-fluid row my-3 py-3">
-            <div class="col-9 col-sm-6 col-lg-9">
-            </div>
-            <div class="col-12 col-sm-5 col-lg-3 text-center">
-                <div class="container-fluid card row py-2">
-                    <div class="card-header">
-                        <b>Add to Cart</b>
-                    </div>
-                    <div class="btn-group my-4" role="group" aria-label="cart-buttons">
-                        <button type="button" class="btn btn-primary" id="decreaseBtn">-</button>
-                        <input type="text" id="quantity" name="quantity" class="form-control input-number text-center w-50" value="10" min="1" max="100">
-                        <button type="button" class="btn btn-primary" id="increaseBtn">+</button>
-                    </div>                    
-                    <div class="container-fluid">
-                        <button type="button" class="btn btn-outline-danger">Add To Cart</button>
-                    </div>  
-                </div>
-            </div>
-        </div>
         `
 })
 
