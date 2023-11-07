@@ -25,7 +25,7 @@ root.component("fg_top_green",{
         <div class="py-1 greencontainer">
         <div class="d-flex flex-wrap align-items-center">
             <!-- Logo Column on Small Viewport -->
-            <div class="col-12 col-md-7 mb-2 mb-md-0">
+            <div class="col-12 col-md-7 mb-2 mb-md-0 text-center text-md-start">
                 <a href="../home/home.html" class=" justify-content-center justify-content-md-start text-decoration-none">
                     <img src="../images/logo/logo.png" alt="" class="w-25" >
                 </a>
@@ -120,7 +120,7 @@ root.component("fg_top_grey",{
                         <a class="nav-item nav-link" href="../vendors/vendors.html">Vendors</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-item nav-link" href="../Events Page/events.html">News & Events</a>
+                        <a class="nav-item nav-link" href="../Event Page/events.html">News & Events</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-item nav-link" href="../Education Page/education.html">Education Hub</a>
@@ -176,7 +176,7 @@ root.component("fg_bot",{
             <div class="col mb-3">
                 <h5>Information</h5>
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="../Events Page/events.html" class="nav-link p-0 text-body-secondary">News & Events</a></li>
+                    <li class="nav-item mb-2"><a href="../Event Page/events.html" class="nav-link p-0 text-body-secondary">News & Events</a></li>
                     <li class="nav-item mb-2"><a href="../Education Page/education.html" class="nav-link p-0 text-body-secondary">Education Hub</a></li>
                 </ul>
             </div>

@@ -1,6 +1,6 @@
 
 let CheckCred = () => {
-    if (!sessionStorage.getItem("user-cred")) {
+    if (sessionStorage.getItem("user-cred")) {
         console.log(sessionStorage.getItem("user-cred"))
         console.log(1)
         document.getElementById("profilebutton").innerHTML = `
@@ -16,7 +16,8 @@ let CheckCred = () => {
                     `
 
     } else {
-        var name = sessionStorage.getItem("user-info");
+        // var name = sessionStorage.getItem("user-info");
+        var name = XXXXXXX;
         console.log(2)
         document.getElementById("profilebutton").innerHTML = `
 
