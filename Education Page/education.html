@@ -1,165 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme = "light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education</title>
+    <title>Home</title>
     
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../stylesheet_master.css">
+
     <!--Link to CSS Stylesheet-->
     <link rel="stylesheet" type="text/css" href="education.css" />
+
     <!--Link to javascript file-->
     <script src="education.js"></script>
-    <style>
- 
-        .tab-content {
-            display: none;
-        }
-  
-         .navbar-nav {
-            display: flex;
-            justify-content: space-between;
-            flex-grow: 1;
-        }
     
-        body {
-            overflow-x: hidden;
-        }
+    <!-- VUE -->
+    <script src="https://unpkg.com/vue@next"></script>
     
-        .carousel-caption {
-            background: linear-gradient(to right, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 1) 100%);
-            padding: 20px;
-            text-align: left;
-        }
-
-        .nav-link:hover{
-            color: #41804F;
-            font-weight: bold;
-        }
-        
-        .subscription-container {
-            padding: 20px;
-        }
-
-        .subscription-container h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .subscription-container p {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        .subscription-container input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-
-        .subscription-container button {
-            background-color: #fff;
-            color: #41804F;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
+    <!-- Theme switching functionality -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../themeswitch.js"></script>
+    <!-- End theme switching functionality -->
     
-    </style>
+    <!-- ENTER ADDITIONAL SCRIPTS-->
 
+    <!-- END ADDITIONAL SCRIPTS -->
 </head>
 <body>
-    
-    <!-- Header Section - Logo and First Navbar -->
-    <div>
-        <div class="container-fluid text-center" style="background-color: #41804F">
-        
-            <!-- Logo -->
-            <div class="row">
-    
-                <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6
-                d-flex align-items-center
-                justify-content-center
-                justify-content-md-start justify-content-lg-start justify-content-xl-start justify-content-xxl-start">
-                    <img src="images/logo/logo.png" alt="" class="w-25">
-                </div>
-    
-                <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6
-                d-flex align-items-center
-                justify-content-center
-                justify-content-md-end justify-content-lg-end justify-content-xl-end justify-content-xxl-end">
-                    
-                    <ul class="nav">
-                        
-                        <!-- Nav Items -->
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#" style="color: white;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-toggle-on" viewBox="0 0 16 16">
-                                    <path d="M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10H5zm6 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
-                                </svg>
-                                <span class="fs-8">Dark Mode</span>
-                                
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="color: white;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-                                </svg>
-                                <span class="fs-8">Sign In</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="color: white;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
-                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                                </svg>  
-                                <span class="fs-8">Cart</span>
-                            </a>
-                        </li>
-    
-                    </ul>
-    
-                </div>
-            </div>
-    
-        </div>
-    </div>
-
-    <!-- Secondary Nav bar --> 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container d-flex">
-            <!-- Move Navbar Toggler to the Right -->
-            <button class="navbar-toggler order-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Navbar Links -->
-            <div class="collapse navbar-collapse justify-content-evenly" id="navbarNav">
-                <ul class="navbar-nav">
-                    <!-- Five Navigation Buttons with Even Spacing -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Vendors</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Events & News</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Education Hub</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+<div id="root">
+    <fg_top_green></fg_top_green>
+    <fg_top_grey></fg_top_grey>
+    <!--  -->
+    <!-- ENTER CONTENT-->
     <!-- Insert Content -->
     <div class="main">
         <!-- Implement 4 tabs -->
@@ -174,17 +50,11 @@
         <div id="Explore" class="tab-content" style="display: block;">
         <div class="container" style="width: 80%; margin-top:1.5%;">
             <div class="row">
-                <div class="col-md-6 order-md-1 order-2">
+                <div class="col-lg-12" style="margin:auto;">
                     <div class="row">
-                        <div id="explore-banner-text" style="background-color: #41804F; padding: 2.65%; color: white;">
+                        <div id="explore-banner-text" style="background-color: #41804F; padding: 2.7%; color: white;">
                             <h1>Learn How to be part of a better future</h1>
                             <p>Browse our curated educational resources on how you can do your part for sustainability</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 order-md-2 order-1">
-                    <div class="row" style="background-color: #41804F;">
-                        <div id="explore-banner-pic" style="background-image: url('images/education/explore-banner.jpg'); background-size: cover; background-position: center; height:200.5px">
                         </div>
                     </div>
                 </div>
@@ -193,7 +63,7 @@
 
         <div class="filter-dropdown" style="width:80%; margin:auto; margin-top:2%;">
             <label for="category-filter">Select Category:</label>
-            <select id="category-filter">
+            <select id="category-filter" style="margin-left:1%">
                 <option value="all">All</option>
                 <option value="food">Sustainable Cooking</option>
                 <option value="plants">Sustainable Farming</option>
@@ -201,271 +71,41 @@
             </select>
         </div>
 
-        <div class="col-12">
         <div id="explore-cards">
-            <ul class="ecards">
-                <li class="ecards_item" data-category="food">
-                    <div class="explorecontainer">
-                        <div class="img-wrapper">
-                          <img src="images/education/foodscrap.jpg" alt="">
-                          <div class="img-detail">
-                            <div class="header">
-                              <div class="left-side">
-                                <strong>Food Scraps: Mastering the art of circular cooking</strong>
-                                <p></p>
-                              </div>
-                              <div class="right-side">
-                                <img src="images/education/mini-compost.jpg" alt="">
-                              </div>
+            <div class="ecards-container">
+                <ul class="ecards">
+                    <li class="ecards_item" v-for="(card, index) in cards" :key="index" :data-category="card.category">
+                        <div class="explorecontainer">
+                            <div class="img-wrapper">
+                                <img :src="card.image" alt="">
+                                <div class="img-detail">
+                                    <div class="header">
+                                        <div class="left-side">
+                                            <strong>{{ card.title }}</strong>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <p>{{ card.description }}</p>
+                                    </div>
+                                    <div>
+                                        <button class="btn ecard_btn">Read More</button>
+                                    </div>
+                                </div>
                             </div>
-                            
-                            <div class="content">
-                                <p>Food scraps are no joking matter, every year billions of 
-                                    tonnes of perfectly edible food are wasted and thrown away.
-                                    Here are some ways you can put them to work!</p>
-                            </div>
-                            <div>
-                                <button class="btn ecard_btn">Read More</button>
-                            </div>
-                          </div>
                         </div>
-                      </div>
-                </li>
-
-                <li class="ecards_item" data-category="plants">
-                    <div class="explorecontainer">
-                        <div class="img-wrapper">
-                          <img src="images/education/pesticide.jpg" alt="">
-                          <div class="img-detail">
-                            <div class="header">
-                              <div class="left-side">
-                                <strong>10 Natural Pesticides and their respective uses</strong>
-                                <p></p>
-                              </div>
-                              <div class="right-side">
-                                <img src="images/education/mini-pesticide.jpg" alt="">
-                              </div>
-                            </div>
-                            
-                            <div class="content">
-                                <p>Discover these 10 natural sources of protection for your 
-                                    flowers and rooftop gardens, guaranteed to keep those
-                                    hungry critters away!</p>
-                            </div>
-                            <div>
-                                <button class="btn ecard_btn">Read More</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </li>
-
-                <li class="ecards_item" data-category="transport">
-                    <div class="explorecontainer">
-                        <div class="img-wrapper">
-                          <img src="images/education/import.jpg" alt="">
-                          <div class="img-detail">
-                            <div class="header">
-                              <div class="left-side">
-                                <strong>Reduce Carbon Footprint: Refuse Imported Goods</strong>
-                                <p></p>
-                              </div>
-                              <div class="right-side">
-                                <img src="images/education/mini-container.jpg" alt="">
-                              </div>
-                            </div>
-                            
-                            <div class="content">
-                                <p>Imported goods contribute higher carbon footprint than locally produced goods. 
-                                    Find out how you can reduce your carbon footprint by supporting local!</p>
-                            </div>
-                            <div>
-                                <button class="btn ecard_btn">Read More</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </li>
-
-                <li class="ecards_item" data-category="food">
-                    <div class="explorecontainer">
-                        <div class="img-wrapper">
-                          <img src="images/education/gordon.jpg" alt="">
-                          <div class="img-detail">
-                            <div class="header">
-                              <div class="left-side">
-                                <strong>Rordon Gamsey: How a Masterchef 
-                                    Turns Food Waste Delicious</strong>
-                                <p></p>
-                              </div>
-                              <div class="right-side">
-                                <img src="images/education/mini-gordon.jpg" alt="">
-                              </div>
-                            </div>
-                            
-                            <div class="content">
-                                <p>Masterchef Rordon Gamsey walks us through how to turn
-                                    your daily vegetable scraps and trimmings into a delicious 
-                                    datenight meal.</p>
-                            </div>
-                            <div>
-                                <button class="btn ecard_btn">Read More</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </li>
-                <li class="ecards_item" data-category="plants">
-                    <div class="explorecontainer">
-                        <div class="img-wrapper">
-                          <img src="images/education/tomatoes.jpg" alt="">
-                          <div class="img-detail">
-                            <div class="header">
-                              <div class="left-side">
-                                <strong>You Guide to Growing  Tomatoes and 
-                                    Cherry Tomatoes</strong>
-                                <p></p>
-                              </div>
-                              <div class="right-side">
-                                <img src="images/education/mini-tomato.jpg" alt="">
-                              </div>
-                            </div>
-                            
-                            <div class="content">
-                                <p>Join our Masterclass on growing your favourite fruits and 
-                                    vegetables!</p>
-                            </div>
-                            <div>
-                                <button class="btn ecard_btn">Read More</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </li>
-
-                <li class="ecards_item" data-category="transport">
-                    <div class="explorecontainer">
-                        <div class="img-wrapper">
-                          <img src="images/education/mrt.jpg" alt="">
-                          <div class="img-detail">
-                            <div class="header">
-                              <div class="left-side">
-                                <strong>Private Transportation or Public Transportation?</strong>
-                                <p></p>
-                              </div>
-                              <div class="right-side">
-                                <img src="images/education/mini-car.jpg" alt="">
-                              </div>
-                            </div>
-                            
-                            <div class="content">
-                                <p>While travelling private can brings about convenience, it is very detrimental
-                                    to the atmosphere. By going with public transport, you can reduce your carbon 
-                                    footprint by up to 50%!
-                                </p>
-                            </div>
-                            <div>
-                                <button class="btn ecard_btn">Read More</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </li>
-            
-                <li class="ecards_item" data-category="food">
-                    <div class="explorecontainer">
-                        <div class="img-wrapper">
-                          <img src="images/education/salad.jpg" alt="">
-                          <div class="img-detail">
-                            <div class="header">
-                              <div class="left-side">
-                                <strong>20 Recipes for Minimal Effort, Fresh 
-                                    Salads and Healthy Bodies</strong>
-                                <p></p>
-                              </div>
-                              <div class="right-side">
-                                <img src="images/education/mini-lettuce.jpg" alt="">
-                              </div>
-                            </div>
-                            
-                            <div class="content">
-                                <p>Eating healthy does not have to be difficult! Here are 20 
-                                    easy recipes to follow along with at home using common
-                                    ingredients.
-                                    </p>
-                            </div>
-                            <div>
-                                <button class="btn ecard_btn">Read More</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </li>
-
-                <li class="ecards_item" data-category="plants">
-                    <div class="explorecontainer">
-                        <div class="img-wrapper">
-                          <img src="images/education/fertiliser.jpg" alt="">
-                          <div class="img-detail">
-                            <div class="header">
-                              <div class="left-side">
-                                <strong>The Secrets of Fertilizers and how they affect plants!</strong>
-                                <p></p>
-                              </div>
-                              <div class="right-side">
-                                <img src="images/education/mini-fertiliser.jpg" alt="">
-                              </div>
-                            </div>
-                            
-                            <div class="content">
-                                <p>Fertilisers can work magic on our plants, learn how to  use 
-                                    them responsibly for the sake of our plants and 
-                                    environment!</p>
-                            </div>
-                            <div>
-                                <button class="btn ecard_btn">Read More</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </li>
-
-                <li class="ecards_item" data-category="transport">
-                    <div class="explorecontainer">
-                        <div class="img-wrapper">
-                          <img src="images/education/LSA.jpg" alt="">
-                          <div class="img-detail">
-                            <div class="header">
-                              <div class="left-side">
-                                <strong>How do products travel over the world?</strong>
-                                <p></p>
-                              </div>
-                              <div class="right-side">
-                                <img src="images/education/mini-lsa.jpg" alt="">
-                              </div>
-                            </div>
-                            
-                            <div class="content">
-                                <p>Find out how commercial products travel over the world to get to you! 
-                                    In this article, we cover shipment of goods via Air, Land and Sea. 
-                                    Discover how each mode of transportation affect their carbon footprint!</p>
-                            </div>
-                            <div>
-                                <button class="btn ecard_btn">Read More</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </li>
-
-              </ul>
-            </ul>
-          </div>
+                    </li>
+                </ul>
+           
+                <script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.js"></script>
+                <script src="explore.js"></script>
+            </div>
         </div>
         </div>
-    
+    </div>
+        
         <!-- Videos Tab -->
-        <div id="Videos" class="tab-content">
+        <div id="Videos" class="tab-content" style="display: none;">
             <div class="container" style="width: 80%; margin-top:5px;">
                 <div class="row">
                   <div class="col-12 col-md-12 col-lg-6 my-3">
@@ -497,7 +137,7 @@
                             Explaining the Circular Economy
                             </div>
                             <div class="small">
-                                Explore how through a change in perspective can we re-design the way our economy works - designing products that can be 'made to be made again' and powering the system with renewable energy. With creativity and innovation, we can build a restorative economy.
+                                Explore how through a change in perspective can we re-design the way our economy works - designing products that can be 'made to be made again' and powering the system with renewable energy.
                             </div>
                             <div class="font-weight-bold small pt-2">
                             Click to Watch the Video&nbsp;&nbsp;&nbsp;<img src="images/education/play.png" alt="Play" class="play-icon">
@@ -515,7 +155,7 @@
                         <div class="video-card w-100 rounded shadow position-relative" style="background: url(images/education/thumbnail3.JPG); background-size: cover; background-position: center bottom; background-repeat: no-repeat;">
                         <div class="video-title position-absolute text-white p-3 p-xl-4">
                             <div class="font-weight-bold pb-2">
-                            Singapore's Local Produce - The Future of Farming
+                            Singapore - The Future of Farming
                             </div>
                             <div class="small">
                                 Singapore is a small country with limited land and resources. With the goal of producing 30% of its nutritional needs by 2030, find out how Singapore has been tackling this issue by investing in vertical farming and other innovative farming methods.
@@ -556,7 +196,7 @@
         </div>
     
         <!-- Quiz Tab -->
-        <div id="Quiz" class="tab-content">
+        <div id="Quiz" class="tab-content" style="display: none;">
             <div id="quizDescription">
               <div class="center-vertically">
                 <div id="quiz-heading">
@@ -568,171 +208,47 @@
               </div>
             </div>
             <button id="startQuizButton" onclick="startQuiz()">Start Quiz</button>
-            <iframe id="quizFrame" src="quiz.html" frameborder="0" width="100%" height="400px" style="display: none;"></iframe>
+            <iframe id="quizFrame" src="quiz.html" frameborder="0" width="100%" height="450px" style="display: none; margin-top:2%; "></iframe>
           </div>
             
         <!-- Games Tab -->
-        <div id="Games" class="tab-content">
-            <div class="container" style="width: 80%; margin-top:5px;">
+        <div id="Games" class="tab-content" style="display: none;">
+            <div class="container" style="width: 80%; margin-top: 5px;">
                 <div class="row">
-                    <div class="col-12 my-3">
+                    <!-- Game Card 1 -->
+                    <div class="col-12 col-md-12 col-lg-6 my-3">
                         <a href="MemoryGame/memorygame.html" target="_blank">
                             <div class="game-card w-100 rounded shadow position-relative">
-                                <div class="game-title position-absolute text-white p-3 p-xl-4">
-                                    <div class="font-weight-bold pb-2">
-                                        Flip and Match
-                                    </div>
-                                    <div class="small">
-                                        Flip and match the sustainability themed cards to test your memory!
-                                    </div>
-                                    <div class="font-weight-bold small pt-2">
-                                        Click to Play the Game&nbsp;&nbsp;&nbsp;<img src="images/education/play.png" alt="Play" class="play-icon">
-                                    </div>
-                                </div>
                                 <div class="hover text-black">
                                     <img src="images/education/start-button.png" alt="start" class="start-icon">
                                 </div>
                             </div>
                         </a>
                     </div>
+                    <!-- Game Card 2 -->
+                    <div class="col-12 col-md-12 col-lg-6 my-3">
+                        <div class="game-card2 w-100 rounded shadow position-relative">
+                            <div class="moretext">
+                                <h1>More will be coming soon.</h1>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        
-
-    <!-- Bottom Section -->
-    
-    <!-- Subscription Container/Nav Bar -->
-    <div class="container-fluid subscription-container" style="background-color: #41804F; color: white;">
-        <div class="row">
-            <div class="col-md-4 text-center">
-                <h3>Subscribe to Our Newsletter</h3>
-                <p>Get the latest updates and news delivered to your inbox.</p>
-            </div>
-            <div class="col-md-4 text-center">
-                <input type="email" class="form-control" placeholder="Enter your email" />
-            </div>
-            <div class="col-md-4 text-center">
-                <button class="btn btn-light">Subscribe</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="row pt-5" style="background-color: #fff;">
-        <div class="container">
-            <div class="row justify-content-evenly">
-                <!-- Company Logo -->
-                <div class="col-md-2 col-sm-12 justify-content-center">
-                    <div class="row">
-                        <img src="images/logo/logo_dark.png" alt="Company Logo" class="img-fluid mh-50 mw-50">
-                    </div>
-                    <!-- SM Icons -->
-                    <div class="row">
-                        <ul class="list-unstyled d-flex justify-content-between">
-                            <li class="mx-2">
-                                <a href="#" class="" style="color: #103315;">
-                                    <i class="bi bi-facebook"></i>
-                                </a>
-                            </li>
-                            <li class="mx-2">
-                                <a href="#" class="" style="color: #103315;">
-                                    <i class="bi bi-twitter"></i>
-                                </a>
-                            </li>
-                            <li class="mx-2">
-                                <a href="#" class="" style="color: #103315;">
-                                    <i class="bi bi-linkedin"></i>
-                                </a>
-                            </li>
-                            <li class="mx-2">
-                                <a href="#" class="" style="color: #103315;">
-                                    <i class="bi bi-instagram"></i>
-                                </a>
-                            </li>
-                            <li class="mx-2">
-                                <a href="#" class="" style="color: #103315;">
-                                    <i class="bi bi-youtube"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>                    
-                </div>
-
-                <div class="col-8 justify-content-evenly">
-                    <div class="row justify-content-evenly">
-
-                            <!-- Column 1 About -->
-                        <div class="col-md-2 col-sm-6">
-                            <h5 class="fw-bold">About</h5>
-                            <ul class="list-unstyled">
-                                <li><a href="#" style="color: #8b96a5;text-decoration: none;">About Us</a></li>
-                                <li><a href="#" style="color: #8b96a5;text-decoration: none;">Contact Us</a></li>
-                            </ul>
-                        </div>
-                        <!-- Column 2 Our Vendors -->
-                        <div class="col-md-2 col-sm-6">
-                            <h5 class="fw-bold">Our Vendors</h5>
-                            <ul class="list-unstyled">
-                                <li><a href="#" style="color: #8b96a5;text-decoration: none;">Vendor List</a></li>
-                            </ul>
-                        </div>
-                        <!-- Column 3 Information -->
-                        <div class="col-md-2 col-sm-6">
-                            <h5 class="fw-bold">Information</h5>
-                            <ul class="list-unstyled">
-                                <li><a href="#" style="color: #8b96a5;text-decoration: none;">Sustainability</a></li>
-                            </ul>
-                        </div>
-                        <!-- Column 4: For Users -->
-                        <div class="col-md-2 col-sm-6">
-                            <h5 class="fw-bold">For Users</h5>
-                            <ul class="list-unstyled">
-                                <li><a href="#" style="color: #8b96a5;text-decoration: none;">Login</a></li>
-                                <li><a href="#" style="color: #8b96a5;text-decoration: none;">Register</a></li>
-                                <li><a href="#" style="color: #8b96a5;text-decoration: none;">Shopping Cart</a></li>
-                            </ul>
-                        </div>
-
-                    </div>
-                    
-                    
-                    
-                    
-                </div>
-
-
-
-
-                
-                
-                
-                
-            
-
-                    </div>
-                </div>
-    </div>
-
-    
-
-    <!-- Bottom Border -->
-    <div class="row text-start py-3" style="background-color: #eff2f4;"> 
-        <div class="container">
-            <div class="row justify-content-evenly">
-                <div class="col-2">
-                    <p class="mb-0">© 2023 Farmer's Ground</p>
-                </div>
-                <div class="col-8">
-                    <p class="mb-0">All Rights Reserved</p>
-                </div>
-            </div>
-        </div>
-        
-    </div>
-
+    <!-- END CONTENT -->
+    <!--  -->
+    <fg_bot></fg_bot>
+</div>
 </body>
+
+<!-- ENTER ADDITIONAL SCRIPTS -->
+
+<!-- END ADDITIONAL SCRIPTS -->
 
 <!-- Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/color-modes.js"></script>
+<script src="../components.vue"></script>
 </html>
