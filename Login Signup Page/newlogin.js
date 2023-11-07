@@ -44,7 +44,7 @@ let SignInUser = evt => {
                     birthday: docSnap.data().birthday,
                 }))
                 sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
-                window.location.href = "home.html";
+                window.location.href = "../Home/home.html";
             }
 
 
