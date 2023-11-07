@@ -1,272 +1,89 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/10.5.2/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/10.5.2/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="../stylesheet_master.css">
-
-  <!-- VUE -->
-  <script src="https://unpkg.com/vue@next"></script>
-
-  <!-- Theme switching functionality -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="themeswitch.js"></script>
-  <!-- End theme switching functionality -->
-
-  <!-- ENTER ADDITIONAL SCRIPTS-->
-  <!-- Slick Slide -->
-  <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-  <!-- Add the slick-theme.css if you want default styling -->
-  <link rel="stylesheet" type="text/css"
-    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-  <link rel="stylesheet" href="homecss/slider_style.css" />
-  <style>
-    .navbar-nav {
-      display: flex;
-      justify-content: space-between;
-      flex-grow: 1;
-    }
-
-    body {
-      overflow-x: hidden;
-    }
-  </style>
-  <!-- END ADDITIONAL SCRIPTS -->
-</head>
-
-<body>
-  <div id="root">
-    <div class="py-1 greencontainer">
-      <div class="d-flex flex-wrap align-items-center">
-        <!-- Logo Column on Small Viewport -->
-        <div class="col-12 col-md-7 mb-2 mb-md-0 text-center text-md-start">
-          <a href="index.html" class=" justify-content-center justify-content-md-start text-decoration-none">
-            <img src="images/logo/logo.png" alt="" class="w-25">
-          </a>
-        </div>
-
-        <!-- Buttons Column -->
-        <!-- This jquery script enables the theme selection -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-          $(document).ready(function () {
-            // Handle the Light Theme selection
-            $("#lightTheme").click(function () {
-              // Set the data-bs-theme attribute to "light"
-              $("html").attr("data-bs-theme", "light");
-            });
-
-            // Handle the Dark Theme selection
-            $("#darkTheme").click(function () {
-              // Set the data-bs-theme attribute to "dark"
-              $("html").attr("data-bs-theme", "dark");
-            });
-          });
-        </script>
-        <!-- End theme selection script -->
-        <div class="col-12 col-md-5 pe-3">
-          <ul class="nav text-small justify-content-center justify-content-md-end">
-            <li id="profilebutton">
-              <a href="Login Signup Page/signup.html" class="nav-link nav-top">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                  class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
-                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-                </svg>
-                Sign In
-              </a>
-            </li>
-            <li>
-              <div class="dropdown">
-                <button class="btn btn-success-outline dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                    class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
-                    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
-                  </svg>
-                  Theme
-                </button>
-                <ul class="dropdown-menu dropdown-menu-top text-center">
-                  <li><a class="dropdown-item" href="#" id="lightTheme">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-sun-fill" viewBox="0 0 16 16">
-                        <path
-                          d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
-                      </svg>
-                      Light
-                    </a></li>
-                  <li><a class="dropdown-item" href="#" id="darkTheme">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-moon-fill" viewBox="0 0 16 16">
-                        <path
-                          d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
-                      </svg>
-                      Dark
-                    </a></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <a href="../cart/cart.html" class="nav-link nav-top">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                  class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
-                  <path
-                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                </svg>
-                Cart
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="message">
+      <h2>Welcome</h2>
+      <h1>Firebase Hosting Setup Complete</h1>
+      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
     </div>
-    <nav
-      class="navbar navbar-expand-lg navbar-expand-lg nav-underline justify-content-between w-100 border-bottom px-5 navbar-top">
-      <div class="container-fluid px-5">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-          aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul class="navbar-nav w-100 d-flex justify-content-between">
-            <li class="nav-item">
-              <a class="nav-item nav-link" href="../home/home.html" active>Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item nav-link" href="../Product/productdisplay.html">Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item nav-link" href="../vendors/vendors.html">Vendors</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item nav-link" href="../Event Page/events.html">News & Events</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item nav-link" href="../Education Page/education.html">Education Hub</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item nav-link" href="../About/about.html">About Us</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <!--  -->
-    <!-- ENTER CONTENT-->
-    <!--  -->
+    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <!-- Carousel -->
-    <div class="container-fluid whitecontainer">
-      <div class="row align-items-center">
-        <!-- Left Side Text -->
-        <div class="col-sm-12 col-md-5 text-light text-center">
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-
-          <div class="container w-80">
-            <h1 class="display-5"><strong>
-                <span class="hover">Small Actions</span>
-              </strong></h1>
-          </div>
-
-          <div class="container w-80">
-            <h1 class="display-1"><strong>
-                <span class="hover">Big Results</span>
-              </strong></h1>
-          </div>
-
-          <div class="container text-center my-3">
-            <button class="btn btn-outline-light hover">Learn More</button>
-          </div>
-
-
-
-        </div>
-        <!-- Right side carousel -->
-        <div class="col-7 justify-content-center d-md-block d-none">
-          <div class="slider">
-            <div class="item">
-              <img src="homeimages/image1_produce.jpg" alt="" />
-            </div>
-            <div class="item">
-              <img src="homeimages/image2_seafood.jpg" alt="" />
-            </div>
-            <div class="item">
-              <img src="homeimages/image3_shopping.jpg" alt="" />
-            </div>
-            <div class="item">
-              <img src="homeimages/image4_farm.jpg" alt="" />
-            </div>
-            <div class="item">
-              <img src="homeimages/image1_produce.jpg" alt="" />
-            </div>
-            <div class="item">
-              <img src="homeimages/image2_seafood.jpg" alt="" />
-            </div>
-            <div class="item">
-              <img src="homeimages/image3_shopping.jpg" alt="" />
-            </div>
-            <div class="item">
-              <img src="homeimages/image4_farm.jpg" alt="" />
-            </div>
-          </div>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-          <script type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-          <script>
-            $(document).ready(function () {
-              $(".slider").slick({
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                speed: 500,
-                autoplaySpeed: 2000,
-                infinite: true,
-                autoplay: true,
-                centerMode: true,
-                centerPadding: "0",
-                dots: false,
-                prevArrow: false,
-                nextArrow: false
-              });
-            });
-          </script>
-        </div>
-
-
-
-
-
-
-      </div>
-    </div>
-
-
-
-
-    <!--  -->
-    <!-- END CONTENT -->
-    <!--  -->
-    <fg_bot></fg_bot>
-  </div>
-</body>
-
-<!-- ENTER ADDITIONAL SCRIPTS -->
-<!-- END ADDITIONAL SCRIPTS -->
-
-<!-- Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../assets/js/color-modes.js"></script>
-<script src="../components.vue"></script>
-<script src="../sessionstorage.js"></script>
-
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+  </body>
 </html>
