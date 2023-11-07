@@ -201,45 +201,45 @@
     document.getElementById("bdayInput").setAttribute('value', bday_cur);
 
 
-    const vm = Vue.createApp({
-        data() {
-            return {
-                username: "",
-                firstname: "",
-                lastname: "",
-                address: "",
-                phonenumber: "",
-                birthday: ""
-            };
-        },
-        methods: {
-            updateFirestore() {
-                const userRef = doc(db, "users", JSON.parse(sessionStorage.getItem("user-creds")).uid);
+    // const vm = Vue.createApp({
+    //     data() {
+    //         return {
+    //             username: "",
+    //             firstname: "",
+    //             lastname: "",
+    //             address: "",
+    //             phonenumber: "",
+    //             birthday: ""
+    //         };
+    //     },
+    //     methods: {
+    //         updateFirestore() {
+    //             const userRef = doc(db, "users", JSON.parse(sessionStorage.getItem("user-creds")).uid);
 
-                // Create an object with the updated values
-                const updates = {
-                    username: this.username,
-                    firstname: this.firstname,
-                    lastname: this.lastname,
-                    phonenumber: this.phonenumber,
-                    address: this.address,
-                    birthday: this.birthday
-                };
+    //             // Create an object with the updated values
+    //             const updates = {
+    //                 username: this.username,
+    //                 firstname: this.firstname,
+    //                 lastname: this.lastname,
+    //                 phonenumber: this.phonenumber,
+    //                 address: this.address,
+    //                 birthday: this.birthday
+    //             };
 
-                // Update the Firestore document
-                console.log(updates)
-                updateDoc(userRef, updates)
-                    .then(() => {
-                        console.log("Document updated successfully");
-                        // Update the session storage with the new user info
-                        sessionStorage.setItem("user-info", JSON.stringify(updates));
-                    })
-                    .catch((error) => {
-                        console.error("Error updating document:", error);
-                    });
-            }
-        }
-    }).mount('#MainForm');
+    //             // Update the Firestore document
+    //             console.log(updates)
+    //             updateDoc(userRef, updates)
+    //                 .then(() => {
+    //                     console.log("Document updated successfully");
+    //                     // Update the session storage with the new user info
+    //                     sessionStorage.setItem("user-info", JSON.stringify(updates));
+    //                 })
+    //                 .catch((error) => {
+    //                     console.error("Error updating document:", error);
+    //                 });
+    //         }
+    //     }
+    // }).mount('#MainForm');
 
     let username = document.getElementById('usernameInput');
     let firstname = document.getElementById('fnameInput');
@@ -268,7 +268,7 @@
             sessionStorage.removeItem("user-info");
 
 
-            
+
             await setDoc(ref, {
                 username: username.value,
                 firstname: firstname.value,
