@@ -17,8 +17,10 @@ let CheckCred = () => {
 
     } else {
         // var name = sessionStorage.getItem("user-info");
-        var name = XXXXXXX;
+        
         console.log(2)
+        let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
+        var name = UserInfo.username;
         document.getElementById("profilebutton").innerHTML = `
 
                     <a href="../Profile Page/mainprofile.html" class="nav-link nav-top">
