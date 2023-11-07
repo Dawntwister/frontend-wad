@@ -10,7 +10,7 @@
     
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../testprodisplay/productdisplay.css">
+    <link rel="stylesheet" href="../Product/productdisplay.css">
     
     <!-- VUE -->
     <script src="https://unpkg.com/vue@next"></script>
@@ -21,7 +21,7 @@
     <!-- End theme switching functionality -->
     
     <!-- ENTER ADDITIONAL SCRIPTS-->
-
+    <script src="productdisplay.js"></script>
     <!-- END ADDITIONAL SCRIPTS -->
 </head>
 <body>
@@ -99,39 +99,57 @@
 
         // Loop through list_objects to create and display product items in the grid
         for (const key in list_objects) {
-            if (list_objects.hasOwnProperty(key)) {
-                const item = list_objects[key];
+    if (list_objects.hasOwnProperty(key)) {
+        const item = list_objects[key];
 
-                const productItem = document.createElement('div');
-                productItem.classList.add('product-item');
+        const productItem = document.createElement('div');
+        productItem.classList.add('product-item');
 
-                const productImage = document.createElement('img');
-                productImage.classList.add('product-image');
-                productImage.src = item.image; // Assuming item.image is the image URL
-                productImage.alt = item.name;
+        const productImage = document.createElement('img');
+        productImage.classList.add('product-image');
+        productImage.src = item.image; // Assuming item.image is the image URL
+        productImage.alt = item.name;
 
-                const productName = document.createElement('div');
-                productName.classList.add('product-name');
-                productName.textContent = item.name;
+        const productName = document.createElement('div');
+        productName.classList.add('product-name');
+        productName.textContent = item.name;
 
-                const productPrice = document.createElement('div');
-                productPrice.classList.add('product-price');
-                productPrice.textContent = `$${item.price.toFixed(2)}`;
+        const productPrice = document.createElement('div');
+        productPrice.classList.add('product-price');
+        productPrice.textContent = `$${item.price.toFixed(2)}`;
 
-                const productFootprint = document.createElement('div');
-                productFootprint.classList.add('product-footprint');
-                productFootprint.textContent = `Carbon Footprint: ${item['Carbon Footprint']}`;
+        const productFootprint = document.createElement('div');
+        productFootprint.classList.add('product-footprint');
+        productFootprint.textContent = `Carbon Footprint: ${item['Carbon Footprint']} kg CO₂`;
 
-                productFootprint.textContent = item['Carbon Footprint'] + ' kg CO₂';
+        // Add code to display "Waste" and "Water" here
+        const productWaste = document.createElement('div');
+        productWaste.classList.add('product-waste');
+        productWaste.textContent = `Waste: ${item['Waste']} kg`;
 
-                productItem.appendChild(productImage);
-                productItem.appendChild(productName);
-                productItem.appendChild(productPrice);
-                productItem.appendChild(productFootprint);
+        const productWater = document.createElement('div');
+        productWater.classList.add('product-water');
+        productWater.textContent = `Water: ${item['Water']} liters`;
 
-                productGrid.appendChild(productItem);
-            }
-        }
+        const addToCartButton = document.createElement('button');
+        addToCartButton.classList.add('add-to-cart-button');
+        addToCartButton.textContent = 'Add to Cart';
+
+        addToCartButton.addEventListener('click', () => {
+            // Implement the logic to add the product to the cart here
+            addToCart(item);
+        });
+
+        productItem.appendChild(productImage);
+        productItem.appendChild(productName);
+        productItem.appendChild(productPrice);
+        // productItem.appendChild(productFootprint);
+        // productItem.appendChild(productWaste);
+        // productItem.appendChild(productWater);
+        productItem.appendChild(addToCartButton);
+        productGrid.appendChild(productItem);
+    }
+}
     }
 
     function filterProductsByType(type) {

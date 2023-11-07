@@ -1,0 +1,303 @@
+
+/* Light Mode */
+[data-bs-theme="light"] {
+    --bs-body-color: var(--bs-black);
+    --bs-body-color-rgb: #{to-rgb($black)};
+    --bs-body-bg: var(--bs-white);
+    --bs-body-bg-rgb: #{to-rgb($white)};
+    --bs-tertiary-bg: #{$blue-600};
+    
+    .dropdown-menu { 
+        background-color: white; 
+    }
+    
+    .darkgreencontainer{
+        background-color: #103315;
+        color: white;
+    }
+    .greencontainer{
+        background-color: #41804F;
+        color: white;
+    }
+    .lightgreencontainer{
+        background-color: #74b9a0;
+        color: white;
+    }
+    .whitecontainer{
+        background-color: white;
+        color: #103315;
+    }
+    
+    .navbar-top{
+        background-color: white;
+    }
+
+    .navbar .nav-link{
+        color: #000;
+    }
+    
+    .navbar .nav-link:hover{
+        color: #41804f;
+    }
+    
+    .nav-top:hover{
+        color: #74b9a0;
+    }
+    
+    .nav-link{
+        color: white;
+    }
+    
+    .nav-top:focus{
+        color: white;
+    }
+    
+    .btn-success-outline{
+        color: white;
+    }
+    .btn-success-outline:hover{
+        color: #74b9a0;
+    }
+    .btn-success-outline:focus{
+        color: white;
+    }
+    .container-payment{
+        border: 10px solid;
+        background-color: white;
+        border-color: #74B9A0;
+        border-radius: 1.5rem;
+        color: black;
+    }
+    #usernameDisplay {
+        font-weight: bold;
+        color: #000;
+    }
+    /* home.html styling */
+    /* This style helps the carousel hover colour functionality */
+    .hover {
+    color: #0000;
+    background: 
+        linear-gradient(90deg,#41804F 50%,black 0) 
+        var(--_p,100%)/200% no-repeat;
+    -webkit-background-clip: text;
+            background-clip: text;
+    transition: .4s;
+    }
+    .hover:hover {
+    --_p: 0%;
+    }
+    .btn-outline-light {
+        color: #0000;
+        border-width: 2px;
+        font-weight: bold;
+        border-color: black;
+        background: 
+            linear-gradient(90deg,#41804F 50%,black 0) 
+            var(--_p,100%)/200% no-repeat;
+        -webkit-background-clip: text;
+                background-clip: text;
+        transition: .4s;
+        }
+        .btn-outline-light:hover {
+        --_p: 0%;
+        border: 2px solid #41804F
+        }
+    /* end home.html styling */
+    }
+    /* End Light Mode */
+    /* Dark Mode */
+    [data-bs-theme="dark"] {
+    --bs-body-color: var(--bs-white);
+    --bs-body-color-rgb: #{to-rgb($white)};
+    --bs-body-bg: var(--bs-darkgreen);
+    --bs-body-bg-rgb: #{to-rgb($darkgreen)};
+    --bs-tertiary-bg: #{$blue-600};
+    
+    .dropdown-menu{ 
+        background-color: #103315; 
+    }
+    
+    .darkgreencontainer{
+        background-color: black;
+        color: white;
+    }
+    .greencontainer{
+        background-color: #103315;
+        color: white;
+    }
+    .lightgreencontainer{
+        background-color: black;
+        color: white;
+    }
+    .whitecontainer{
+        background-color: #121212;
+        color: white;
+    }
+    
+    .navbar-top{
+        background-color: #121212;
+    }
+    
+    
+    .navbar .nav-link{
+        color: white;
+    }
+    
+    .navbar .nav-link:hover{
+        color: #74b9a0;
+    }
+    
+    .nav-top:hover{
+        color: black;
+    }
+    
+    .nav-link{
+        color: white;
+    }
+    
+    .nav-top:focus{
+        color: white;
+    }
+    .btn-success-outline{
+        color: white;
+    }
+    .btn-success-outline:hover{
+        color: black;
+    }
+    .btn-success-outline:focus{
+        color: white;
+    }
+    .container-payment{
+        border: 10px solid;
+        background-color: #505050;
+        border-color: black;
+        border-radius: 1.5rem;
+        color: black;
+    }
+    
+    /*Portion for Sign up & Login */
+    .separator::before,
+        .separator::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #ffffff;
+        }
+
+    #usernameDisplay {
+            font-weight: bold;
+            color: #ebdcdcc8;
+    }
+        /* home.html styling */
+    /* This style helps the carousel hover colour functionality */
+    .hover {
+        color: #0000;
+        background: 
+            linear-gradient(90deg,#41804F 50%,white 0) 
+            var(--_p,100%)/200% no-repeat;
+        -webkit-background-clip: text;
+                background-clip: text;
+        transition: .4s;
+        }
+        .hover:hover {
+        --_p: 0%;
+        }
+        .btn-outline-light {
+            color: #0000;
+            border-width: 2px;
+            font-weight: bold;
+            border-color: white;
+            background: 
+                linear-gradient(90deg,#41804F 50%,white 0) 
+                var(--_p,100%)/200% no-repeat;
+            -webkit-background-clip: text;
+                    background-clip: text;
+            transition: .4s;
+            }
+            .btn-outline-light:hover {
+            --_p: 0%;
+            border: 2px solid #41804F
+            }
+        /* end home.html styling */    
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Container styles */
+        #cart-container {
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Table styles */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        table th {
+            background-color: #41804F;
+        }
+
+        /* Table header and data styles */
+        th, td {
+            padding: 10px;
+        }
+
+        /* Image styles */
+        img {
+            max-width: 80px;
+            max-height: 80px;
+        }
+
+        /* Grand total container styles */
+        #grand-total-container {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #41804F;
+            border-radius: 5px;
+        }
+
+        /* Cart title styles */
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Total styles */
+        .total {
+            font-weight: bold;
+        }
+
+    }
+    /* End Dark Mode */
+
+/* Featurettes */
+.featurette-divider {
+    margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+/* rtl:begin:remove */
+
+.featurette-heading {
+    letter-spacing: -.05rem;
+}
+/* End Featurettes */
+
+img{
+    border-radius: 15px;
+}
