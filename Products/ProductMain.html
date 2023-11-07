@@ -38,31 +38,52 @@
                         <a href="home">Home</a>
                         <span>&gt;</span>
                         <a href="products">Products</a>
+                        <span>&gt;</span>
+                        <a href="vegetables">Vegetables</a>
                     </nav>
                 </div>
             </div>
 
             <div class="row white-box text-dark my-3" id="product">
                 <div class="col-8">
-                    <b>Products</b>
+                    <b>Vegetables</b>
                 </div>
                 <div class="col-4 text-end">
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-primary" type="submit">Search</button>
-                    </form>                
+                        <button class="btn btn-outline-primary" type="submit" id="searchbar">Search</button>
+                    </form>
+                    <span class="clear" onclick="document.getElementById('searchbar').value = ''">
+                    </span>                
                 </div>
             </div>
         </div>              
     
         <div class="container-fluid my-5">
-            <div class="row justify-content-evenly" id="product_bar">
-                <producttype-component v-for="(value, producttype_name) in product_types"
-                    v-bind:name = "producttype_name"
-                    v-bind:details = "value.details">
-                </producttype-component>
+            <div class="row justify-content-between" id="product_cards">
+                <div class="w-25 card col-4 me-2 my-3" id=card-bg>
+                    <img src="./images/Eggs.jpg" class="card-img-top px-2 py-4">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Eggs</h5>
+                    </div>
+                </div>
+
+                <div class="w-25 card col-4 me-2 my-3" id=card-bg>
+                    <img src="./images/Vegetables.jpg" class="card-img-top px-2 py-4">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Vegetables</h5>
+                    </div>
+                </div>
+
+                <div class="w-25 card col-4 me-2 my-3" id=card-bg>
+                    <img src="./images/Meat.jpg" class="card-img-top px-2 py-4">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Meat</h5>
+                    </div>
+                </div>
             </div>
         </div>
+
     </div>
     <!-- END CONTENT -->
     <!--  -->
