@@ -114,7 +114,7 @@ root.component("fg_top_grey",{
                         <a class="nav-item nav-link" href="../home/home.html" active>Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-item nav-link" href="../products/products.html">Products</a>
+                        <a class="nav-item nav-link" href="../Product/productdisplay.html">Products</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-item nav-link" href="../vendors/vendors.html">Vendors</a>
@@ -366,7 +366,7 @@ root.component("fg_bot",{
             <div class="col mb-3">
                 <h5>Our Offerings</h5>
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="../Products/products.html" class="nav-link p-0 text-body-secondary">Products</a></li>
+                    <li class="nav-item mb-2"><a href="../Product/productdisplay.html" class="nav-link p-0 text-body-secondary">Products</a></li>
                     <li class="nav-item mb-2"><a href="../Vendors/vendors.html" class="nav-link p-0 text-body-secondary">Vendors</a></li>
                 </ul>
             </div>
