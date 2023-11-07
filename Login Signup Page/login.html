@@ -51,7 +51,7 @@
     <!-- End theme switching functionality -->
     
     <!-- ENTER ADDITIONAL SCRIPTS-->
-    <script src="login.js" type="module"></script>
+    <script src="newlogin.js" type="module"></script>
 
     <!-- END ADDITIONAL SCRIPTS -->
 </head>
@@ -64,50 +64,42 @@
     <!--  -->
     <!-- Login Content -->
     <!-- Login Container -->
-    <div class="container mt-5 mb-5"> <!-- Added mt-5 and mb-5 for top and bottom margin -->
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="signup-header">Login</h5>
-                        <form>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email Address</label>
-                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Password">
-                            </div>
-                            <div class="mb-3">
-                                <button id="loginButton" name="login" type="button" class="btn btn-success form-control">Login</button>
-                            </div>
-                            <div class="text-center mt-3">Don't have an account? <a href="signup.html" style="color: #48aa50; text-decoration: none;">Register</a></div>
-                            <br>
-                            <div class="separator">Or</div>
-                            <br>
-                            <div class="d-grid gap-2 col-12 mx-auto mt-3">
-                                <!-- Google Sign-in Button with Icon -->
-                                <button class="btn btn-danger" type="button">
-                                    <i class="bi bi-google"></i> Sign-in with Google
-                                </button>
-                                <!-- Facebook Sign-in Button with Icon -->
-                                <button class="btn btn-primary" type="button">
-                                    <i class="bi bi-facebook"></i> Sign-in with Facebook
-                                </button>
-                                <!-- Twitter Sign-in Button with Icon -->
-                                <button class="btn btn-info" type="button">
-                                    <i class="bi bi-twitter"></i> Sign-in with Twitter
-                                </button>
-                            </div>
-                        </form>
+    <form id="MainForm">
+        <div class="container mt-5 mb-5"> <!-- Added mt-5 and mb-5 for top and bottom margin -->
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="signup-header">Login</h5>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="emailInp" aria-describedby="emailHelp" placeholder="Email">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="passwordInp" placeholder="Password">
+                                </div>
+                                <div class="mb-3">
+                                    <button id="loginButton" name="login" type="submit" class="btn btn-success form-control">Login</button>
+                                </div>
+                                <div class="text-center mt-3">Don't have an account? <a href="signup.html" style="color: #48aa50; text-decoration: none;">Register</a></div>
+                                <br>
+                                <div class="separator">Or</div>
+                                <br>
+                                <div class="d-grid gap-2 col-12 mx-auto mt-3">
+                                    <!-- Google Sign-in Button with Icon -->
+                                    <button class="btn btn-danger" type="button" id="loginGoogleButton">
+                                        <i class="bi bi-google"></i> Sign-in with Google
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    
+    </form>
 
 
 

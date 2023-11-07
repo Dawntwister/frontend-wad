@@ -2,7 +2,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
 import { getDatabase, set, ref, update } from 'https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js';
 
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged  } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithRedirect, getRedirectResult  } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -22,8 +23,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth(app);
+const provider = new GoogleAuthProvider(app);
 
 
+
+// Regular Email/Password Sign in
 loginButton.addEventListener('click',(e) => {
 
     var email = document.getElementById('email').value;
@@ -40,16 +44,6 @@ loginButton.addEventListener('click',(e) => {
         })
         alert('Successfully login');
         // window.location.href = '#';
-
-        // getAuth(child(database, 'UsersAuthList/' + userCredential.user.uid)).then((snapshot)=>{
-        //     if (snapshot.exists) {
-        //         sessionStorage.setItem("user-info", JSON.stringify({
-        //             firstname: snapshot.val().firstname,
-        //             lastname: snapshot.val().lastname
-        //         }))
-        //         sessionStorage.set
-        //     }
-        // })
 
     })
 
@@ -77,19 +71,32 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
-// Log Out Function
-// logoutButton.addEventListener('click',(e) => {
+// Google Sign In
+loginGoogleButton.addEventListener('click',(e) => {
+    signInWithRedirect(auth, provider);
 
-//     signOut(auth).then(() => {
-//       // Sign-out successful.
-//       alert('Successfully logged out');
-//     })
-//     .catch((error) => {
-//       // An error happened.
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
+    getRedirectResult(auth)
+    .then((result) => {
+        // This gives you a Google Access Token. You can use it to access Google APIs.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
 
-//     alert(errorMessage);
-//     });
+        // The signed-in user info.
+        const user = result.user;
+        // IdP data available using getAdditionalUserInfo(result)
+        // ...
+    }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+  });
 
-// });
+
+});
+
+
