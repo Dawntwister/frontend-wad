@@ -331,6 +331,10 @@
             cursor: pointer;
         }
 
+        .product-footprint {
+            color:black;
+        }
+
     }
     /* End Dark Mode */
 
