@@ -51,6 +51,7 @@ let SignInUser = evt => {
         })
         .catch((error) => {
             alert(error.message);
+            alert("Not in system");
         })
 }
 
