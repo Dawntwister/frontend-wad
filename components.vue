@@ -133,7 +133,23 @@ root.component("fg_top_grey",{
         </div>
     </nav>
         `
-})  
+})
+
+root.component("fg_breadcrumbs",{
+    props:[],
+    template:
+        `
+        <div class="container-fluid row text-bg-light my-3 py-3 align-items-center">
+            <nav class="align-items-center" aria-label="breadcrumb">
+                <ol class="breadcrumb align-items-center">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Library</li>
+                </ol>
+            </nav>
+        </div>
+        `
+})
+
 root.component("fg_bot",{
     props:[],
     template:
