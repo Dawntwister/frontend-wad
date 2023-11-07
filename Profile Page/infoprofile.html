@@ -73,7 +73,7 @@
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" id="usernameInput"
                                                 placeholder="name@example.com">
-                                            <label class="small" for="usernameInput">Username:</label>
+                                            <label class="small" for="usernameInput" v-model="username">Username:</label>
                                         </div>
                                     </div>
                                 </div>
@@ -132,7 +132,8 @@
                                     </div>
                                 </div>
                                 <!-- Save changes button-->
-                                <button class="btn btn-success" id="saveChangesBtn">Edit</button>
+                                <button class="btn btn-success" @click="updateFirestore"
+                                    id="saveChangesBtn">Edit</button>
                             </form>
                         </div>
                     </div>
@@ -153,31 +154,12 @@
 <!-- ENTER ADDITIONAL SCRIPTS -->
 
 <!-- This script fills the fields with current data -->
-<script>
-    let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
-    let username_cur = UserInfo.username;
-    let fname_cur = UserInfo.firstname;
-    let lname_cur = UserInfo.lastname;
-    let email_cur = UserInfo.email;
-    let address_cur = UserInfo.address;
-    let phone_cur = UserInfo.phonenumber;
-    let bday_cur = UserInfo.birthday;
-
-    document.getElementById("usernameInput").setAttribute('value', username_cur);
-    document.getElementById("fnameInput").setAttribute('value', fname_cur);
-    document.getElementById("lnameInput").setAttribute('value', lname_cur);
-    document.getElementById("emailInput").setAttribute('value', email_cur);
-    document.getElementById("addressInput").setAttribute('value', address_cur);
-    document.getElementById("phoneInput").setAttribute('value', phone_cur);
-    document.getElementById("bdayInput").setAttribute('value', bday_cur);
-</script>
 
 <!-- This script updates the firestore with new data -->
 <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
-    import { getFirestore, doc, updateDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
-    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+    import { getFirestore, doc, getDoc,updateDoc } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
 
 
     // TODO: Add SDKs for Firebase products that you want to use
@@ -197,8 +179,67 @@
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const db = getFirestore();
-    const auth = getAuth(app);
 
+    var ref = doc(db, "users", JSON.parse(sessionStorage.getItem("user-creds")).uid);
+    const docSnap = await getDoc(ref);
+    
+    console.log();
+    let username_cur = docSnap.data().username;
+    let fname_cur = docSnap.data().firstname;
+    let lname_cur = docSnap.data().lastname;
+    let email_cur = docSnap.data().email;
+    let address_cur = docSnap.data().address;
+    let phone_cur = docSnap.data().phonenumber;
+    let bday_cur = docSnap.data().birthday;
+
+    document.getElementById("usernameInput").setAttribute('value', username_cur);
+    document.getElementById("fnameInput").setAttribute('value', fname_cur);
+    document.getElementById("lnameInput").setAttribute('value', lname_cur);
+    document.getElementById("emailInput").setAttribute('value', email_cur);
+    document.getElementById("addressInput").setAttribute('value', address_cur);
+    document.getElementById("phoneInput").setAttribute('value', phone_cur);
+    document.getElementById("bdayInput").setAttribute('value', bday_cur);
+
+
+    const vm = Vue.createApp({
+        data() {
+            return {
+                username: "",
+                firstname: "",
+                lastname: "",
+                address: "",
+                phonenumber: "",
+                birthday: ""
+            };
+        },
+        methods: {
+            updateFirestore() {
+                const userRef = doc(db, "users", JSON.parse(sessionStorage.getItem("user-creds")).uid);
+
+                // Create an object with the updated values
+                const updates = {
+                    username: this.username,
+                    firstname: this.firstname,
+                    lastname: this.lastname,
+                    phonenumber: this.phonenumber,
+                    address: this.address,
+                    birthday: this.birthday
+                };
+
+                // Update the Firestore document
+                console.log(updates)
+                updateDoc(userRef, updates)
+                    .then(() => {
+                        console.log("Document updated successfully");
+                        // Update the session storage with the new user info
+                        sessionStorage.setItem("user-info", JSON.stringify(updates));
+                    })
+                    .catch((error) => {
+                        console.error("Error updating document:", error);
+                    });
+            }
+        }
+    }).mount('#MainForm');
 
     let username = document.getElementById('usernameInput');
     let firstname = document.getElementById('fnameInput');
@@ -212,27 +253,45 @@
 
     MainForm.addEventListener("submit", async (e) => {
         var ref = doc(db, "users", JSON.parse(sessionStorage.getItem("user-creds")).uid);
-        await updateDoc(ref, {
-            username: deleteField(),
-            firstname: deleteField(),
-            lastname: deleteField(),
-            email: deleteField(),
-            password: deleteField(),
-            phonenumber: deleteField(),
-            address: deleteField(),
-            birthday: deleteField(),
-        });
-        await setDoc(ref, {
-            username: username.value,
-            firstname: firstname.value,
-            lastname: lastname.value,
-            email: email.value,
-            password: password.value,
-            phonenumber: phonenumber.value,
-            address: address.value,
-            birthday: birthday.value,
-        });
-    })
+
+        try {
+            await updateDoc(ref, {
+                username: deleteField(),
+                firstname: deleteField(),
+                lastname: deleteField(),
+                email: deleteField(),
+                phonenumber: deleteField(),
+                address: deleteField(),
+                birthday: deleteField(),
+            });
+
+            sessionStorage.removeItem("user-info");
+
+
+            
+            await setDoc(ref, {
+                username: username.value,
+                firstname: firstname.value,
+                lastname: lastname.value,
+                email: email.value,
+                phonenumber: phonenumber.value,
+                address: address.value,
+                birthday: birthday.value,
+            });
+
+            sessionStorage.setItem("user-info", JSON.stringify({
+                username: username.value,
+                firstname: firstname.value,
+                lastname: lastname.value,
+                email: email.value,
+                phonenumber: phonenumber.value,
+                address: address.value,
+                birthday: birthday.value,
+            }));
+        } catch (error) {
+            console.error("Error updating or setting the document:", error);
+        }
+    });
 
 
 
