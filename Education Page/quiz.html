@@ -4,95 +4,140 @@
     <title>Sustainability Quiz</title>
     <style>
         /* Your CSS styles here */
-        #app {
-            background-color: beige;
-            border-radius: 0 0 10px 10px;
-            position: relative;
-            height: 90vh;
-        }
+#app {
+  background-color: beige;
+  border-radius: 0 0 10px 10px;
+  position: relative;
+  height: 93vh;
+  margin-bottom:2%;
+}
 
-        #title {
-            text-align: center;
-            color: rgb(255, 255, 255);
-            margin-top: 10px;
-            background-color: #447766;
-            border: 2px;
-            border-radius: 10px 10px 0 0;
-            padding: 10px;
-        }
+#title {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  margin-top: 10px;
+  background-color: #447766;
+  border: 2px;
+  padding:1px;
+}
 
-        #question {
-            text-align: center;
-            color: black;
-            margin-top: 10px;
-            font-size: 20px;
-        }
+#question {
+  font-size: 20px;
+  padding-left:2%;
+}
 
-        /* Style the "Next" button */
-        #next-button {
-            background-color: #447766;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            position: absolute; /* Add absolute positioning */
-            bottom: 8%; /* Position the button 10% from the bottom */
-            right: 10%; /* Position the button 5% from the right */
-        }
+#options label {
+  font-size: 16px;
+}
 
-        #next-button:hover {
-            background-color: #103315;
-        }
+/* Media query for screens with a width of 575px or smaller */
+@media (max-width: 575px) {
+  #question {
+    font-size: 16px;
+    padding-left:1%;
+  }
 
-        #quizContainer {
-            border: 20px;
-        }
+  #options label {
+    font-size: 18px;
+    padding-left:1%;
+  }
+}
 
-        /* Style the options */
-        #options {
-            display: flex;
-            flex-wrap: wrap;
-            width: 80%;
-            margin: auto;
-            justify-content: center;
-        }
+/* Media query for screens with a width of 992px or smaller */
+@media (max-width: 992px) {
+  #question {
+    font-size: 16px;
+  }
 
-        #options label {
-            color: #000000;
-            background-color: #ffffff;
-            padding: 10px;
-            margin: 5px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            box-shadow: 0 0 0 2px #9f9f9f;
-            transition: background-color 0.3s; /* Add transition for background color */
-        }
+  #options label {
+    font-size: 12px;
+  }
+}
 
-        #options label:hover {
-            background-color: rgb(228, 228, 216);
-        }
+/* Style the "Next" button */
+#next-button {
+  background-color: #447766;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  position: absolute;
+  bottom: 2.5%;
+  right: 10%;
+}
 
-        #options label.selected {
-            background-color: rgb(228, 228, 216); /* Set the selected option's background color */
-        }
+#next-button:hover {
+  background-color: #103315;
+}
 
-        #result {
-        text-align: center;
-        margin-top: auto;
-        padding: 40px;
-        color: #000000;
-        }
+#quiz-container {
+  border: 20px;
+}
 
-        #result h2 {
-            font-size: 50px;
-        }
+/* Style the options */
+#options {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: auto;
+  justify-content: center;
+}
 
-        #result p {
-            font-size: 36px;
-        }
+#options label {
+  color: #000000;
+  background-color: #ffffff;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 0 0 2px #9f9f9f;
+  transition: background-color 0.3s;
+}
+
+#options label:hover {
+  background-color: rgb(228, 228, 216);
+}
+
+#options label.selected {
+  background-color: rgb(228, 228, 216);
+}
+
+#result {
+  text-align: center;
+  margin-top: auto;
+  padding: 40px;
+  color: #000000;
+}
+
+#result h2 {
+  font-size: 40px;
+}
+
+#result p {
+  font-size: 26px;
+}
+
+#reattempt-button {
+  background-color: #447766;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  position: absolute;
+  bottom: 10%;
+  left: 50%; /* Center the button horizontally */
+  transform: translateX(-50%); /* Center the button horizontally */
+}
+
+#reattempt-button:hover {
+  background-color: #103315;
+}
+
 </style>
     </style>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
@@ -127,6 +172,7 @@
         <div id="result" v-else>
             <h2>Quiz Result</h2>
             <p>Your Score: {{ score }} / {{questions.length}}</p>
+            <button id="reattempt-button" @click="reattemptQuiz">Reattempt Quiz</button>
         </div>
     </div>
 
@@ -256,8 +302,24 @@
                 selectOption(option) {
                     this.selectedAnswer = option;
                 },
+                reattemptQuiz() {
+                    this.currentQuestion = 0;
+                    this.selectedAnswer = null;
+                    this.score = 0;
+                    this.showQuiz = true;
+                }
             },
         });
+
+        function resizeIframe() {
+          const iframe = document.getElementById('quizFrame');
+          const contentHeight = document.body.scrollHeight;
+          iframe.style.height = contentHeight + 'px';
+        }
+
+        // Call the resizeIframe function when the window is loaded and when the content changes (e.g., after selecting an answer).
+        window.addEventListener('load', resizeIframe);
+        window.addEventListener('resize', resizeIframe);
     </script>
 </body>
 </html>

@@ -47,9 +47,3 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-
-
-
-// By default, display the "Explore" tab with other tabs hidden
-document.getElementById("Explore").style.display = "block";
-document.getElementById("ExploreTabButton").classList.add("active");

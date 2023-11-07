@@ -28,6 +28,7 @@ body::before {
     width: 700px; /* Adjust the width based on the number of columns, card size, and gaps */
     height: 700px; /* Adjust the height based on the number of rows, card size, and gaps */
     place-items: center; /* Center the grid both horizontally and vertically */
+    padding-left:4%;
   }
   
   .memory-card {
