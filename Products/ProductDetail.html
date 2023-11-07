@@ -37,43 +37,27 @@
                     <nav class="link-bar">
                         <a href="home">Home</a>
                         <span>&gt;</span>
-                        <a href="products">Products</a>
-                        <span>&gt;</span>
-                        <a href="meat">Meat</a>
-                        <span>&gt;</span>
-                        <a href="thefishfarmer">The Fish Farmer</a>
-                        <span>&gt;</span>
                         <a href="freshlionheadsnapper">Fresh Lion Head Snapper/Red Snapper (500g)</a>
                     </nav>
                 </div>
             </div>
-        </div>              
-        
-        <!-- <div class="container-fluid my-5">
-            <div class="row justify-content-between" id="product_cards">
-                <category-component v-for="(value, category_name) in vendors"
-                    v-bind:name = "category_name"
-                    v-bind:details = "value.details">
-                </category-component>
-            </div>
-        </div> -->
+        </div>
 
         <!-- First Product Content Box -->
         <div class="container-fluid row text-bg-light my-3 py-3 justify-content-evenly">
-            <div class="col-3 me-2">
-                <img src="assets/photos/Local Sea-Water Farmed Lion Head Red Snapper-min-620x620.jpg" class="img-thumbnail rounded p-3">
+            <div class="col-12 col-sm-6 col-lg-4">
+                <img src="./images/Local Sea-Water Farmed Lion Head Red Snapper-min-620x620.jpg" class="img-thumbnail rounded p-3">
             </div>
-            <div class="col-5 me-2">
+            <div class="col-12 col-sm-6 col-lg-4">
                 <div class="container-fluid">
                     <h5>Fresh Lion Head Snapper/Red Snapper (500g)</h5>
                 </div>
 
-                <div class="container-fluid mt-4">
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
+                <div class="container-fluid mt-4 row">
+                    <b>Rating: </b>
+                    <p>
+                        4.5/5
+                    </p>
                 </div>     
                 <div class="container-fluid mt-4">
                     <div class="row mt-2">
@@ -117,7 +101,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3 border border-2 border-secondary-subtle justify-content-center align-items-center">
+            <div class="col-12 col-sm-12 col-lg-4 border border-2 border-secondary-subtle justify-content-center align-items-center">
                 <div class="container-fluid rounded-2 bg-danger-subtle text-dark text-center my-2 p-2 mb-3">
                     <b>The Fish Farmer</b>
                 </div>
@@ -131,11 +115,11 @@
                             <p class="text-secondary">Verified Vendor</p>
                         </div>
                     </div>
-                    <div class="container-fluid row">
+                    <div class="container-fluid row ">
                         <div class="col-1">
                             <i class="bi bi-globe"></i>
                         </div>
-                        <div class="col-2">
+                        <div class="col w-100 text-wrap">
                             <a href="https://thefishfarmer.com/" target="_blank">https://thefishfarmer.com/</a>
                         </div>
                     </div>
@@ -151,9 +135,9 @@
         <!-- Second Product Content Box -->
 
         <div class="container-fluid row my-3 py-3">
-            <div class="col-6 w-100">
-                <div class="card text-dark mb-3">
-                    <div class="card-header">
+            <div class="col-12">
+                <div class="card mb-3">
+                    <div class="card-header bg-secondary">
                         <ul class="nav nav-tabs card-header-tabs" id="detail-list" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#desc-tab-pane" type="button" role="tab" aria-controls="desc-tab-pane" aria-selected="true">Description</button>
@@ -220,14 +204,27 @@
                     </div>
                 </div>    
             </div>
+        </div>
 
-            <div class="col-4">
-                <div class="card text-dark bg-light mb-3">
-                    Hello
+        <div class="container-fluid row my-3 py-3">
+            <div class="col-9 col-sm-6 col-lg-9">
+            </div>
+            <div class="col-12 col-sm-5 col-lg-3 text-center">
+                <div class="container-fluid card row py-2">
+                    <div class="card-header">
+                        <b>Add to Cart</b>
+                    </div>
+                    <div class="btn-group my-4" role="group" aria-label="cart-buttons">
+                        <button type="button" class="btn btn-primary" id="decreaseBtn">-</button>
+                        <input type="text" id="quantity" name="quantity" class="form-control input-number text-center w-50" value="10" min="1" max="100">
+                        <button type="button" class="btn btn-primary" id="increaseBtn">+</button>
+                    </div>                    
+                    <div class="container-fluid">
+                        <button type="button" class="btn btn-outline-danger">Add To Cart</button>
+                    </div>  
                 </div>
             </div>
         </div>
-        
     </div>
     <!-- END CONTENT -->
     <!--  -->
@@ -245,4 +242,5 @@
 <script src="../assets/js/color-modes.js"></script>
 <script src="../components.vue"></script>
 <script src="../sessionstorage.js"></script>
+<script src="./js/product_type_event.js"></script>
 </html>
