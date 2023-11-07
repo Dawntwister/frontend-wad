@@ -30,6 +30,16 @@
     <fg_top_grey></fg_top_grey>
     <!--  -->
     <!-- ENTER CONTENT-->
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div id="explore-banner-text" style="background-color: #41804F; padding: 2.7%; color: white;">
+                            <h1>Support Local Business, Save the Environment</h1>
+                            <p>Start making conscious decision in your food choices today by supporting our local producers and reducing your carbon footprint!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
     <div class ="filter-text">
     <label for="product-type">Filter by Type:</label>
@@ -108,9 +118,16 @@
                 productPrice.classList.add('product-price');
                 productPrice.textContent = `$${item.price.toFixed(2)}`;
 
+                const productFootprint = document.createElement('div');
+                productFootprint.classList.add('product-footprint');
+                productFootprint.textContent = `Carbon Footprint: ${item['Carbon Footprint']}`;
+
+                productFootprint.textContent = item['Carbon Footprint'] + ' kg CO₂';
+
                 productItem.appendChild(productImage);
                 productItem.appendChild(productName);
                 productItem.appendChild(productPrice);
+                productItem.appendChild(productFootprint);
 
                 productGrid.appendChild(productItem);
             }
