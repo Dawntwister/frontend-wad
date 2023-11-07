@@ -50,7 +50,7 @@ root.component("fg_top_green",{
                     });
                 </script>
                 <!-- End theme selection script -->
-            <div class="col-12 col-md-5 pe-3">
+            <div class="col-12 col-md-5 pe-3 text-truncate">
                 <ul class="nav text-small justify-content-center justify-content-md-end">
                     <li id="profilebutton">
                         <a href="../Login Signup Page/login.html" class="nav-link nav-top">
