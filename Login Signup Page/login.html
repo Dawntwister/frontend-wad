@@ -128,9 +128,11 @@
                 const user = result.user;
                 // IdP data available using getAdditionalUserInfo(result)
                 // ...
-                alert(user.displayName);
-                // sessionStorage.setItem("user-creds", JSON.stringify(user.displayName));
-                // window.location.href = "../Home/home.html";
+                console.log(user)
+                sessionStorage.setItem("user-info", JSON.stringify({
+                    username: user.displayName,
+                }))
+                window.location.href = "../Home/home.html";
             }).catch((error) => {
                 // Handle Errors here.
                 const errorCode = error.code;
