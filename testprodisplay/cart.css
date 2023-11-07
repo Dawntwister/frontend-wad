@@ -103,66 +103,8 @@
         border: 2px solid #41804F
         }
     /* end home.html styling */
-
-    .product-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 20px;
-        grid-auto-rows: 1fr; /* Set a fixed height for the grid items */
-    }
-    
-    /* Styles for individual product items */
-    .product-item {
-        border: 1px solid #ccc;
-        padding: 10px;
-        text-align: center;
-        background-color: #fff;
-        transition: transform 0.2s;
-        height: 100%; /* Set the height to 100% */
-        overflow: hidden; /* Hide any content that exceeds the fixed height */
-    }
-    
-    .product-item:hover {
-        transform: scale(1.05);
-    }
-    
-    .product-image {
-        max-width: 100%;
-        height: auto;
-    }
-    
-    /* Styles for product details */
-    .product-name {
-        font-weight: bold;
-    }
-    
-    .product-price {
-        color: #e74c3c;
-    }
-
-    .filter-text {
-        margin-left:20px;
-    }
-
-    #product-type {
-        padding: 5px;
-        margin-top:20px;
-        margin-bottom:20px;
-        margin-left:20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #fff;
-        color: #333;
-        font-size: 14px;
-        width: 150px; /* Adjust the width as needed */
-        cursor: pointer;
-    }
-    
-
     }
     /* End Light Mode */
-
-
     /* Dark Mode */
     [data-bs-theme="dark"] {
     --bs-body-color: var(--bs-white);
@@ -275,65 +217,69 @@
             --_p: 0%;
             border: 2px solid #41804F
             }
-        /* end home.html styling */
-        
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            grid-auto-rows: 1fr; /* Set a fixed height for the grid items */
-        }
-        
-        /* Styles for individual product items */
-        .product-item {
-            border: 1px solid #ccc;
-            padding: 10px;
+        /* end home.html styling */    
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
             text-align: center;
-            background-color: #fff;
-            transition: transform 0.2s;
-            height: 100%; /* Set the height to 100% */
-            overflow: hidden; /* Hide any content that exceeds the fixed height */
-        }
-        
-        .product-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .product-image {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        /* Styles for product details */
-        .product-name {
-            font-weight: bold;
-            color: rgb(0, 0, 0);
-        }
-        
-        .product-price {
-            color: #e74c3c;
         }
 
-        .filter-text {
-            margin-left:20px;
-        }
-    
-        #product-type {
-            padding: 5px;
-            margin-top:20px;
-            margin-bottom:20px;
-            margin-left:20px;
-            border: 1px solid #ccc;
+        /* Container styles */
+        #cart-container {
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
             border-radius: 5px;
-            background-color: #fff;
-            color: #333;
-            font-size: 14px;
-            width: 150px; /* Adjust the width as needed */
-            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .product-footprint {
-            color:black;
+        /* Table styles */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        table th {
+            background-color: #41804F;
+        }
+
+        /* Table header and data styles */
+        th, td {
+            padding: 10px;
+        }
+
+        /* Image styles */
+        img {
+            max-width: 80px;
+            max-height: 80px;
+        }
+
+        /* Grand total container styles */
+        #grand-total-container {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #41804F;
+            border-radius: 5px;
+        }
+
+        /* Cart title styles */
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Total styles */
+        .total {
+            font-weight: bold;
         }
 
     }
