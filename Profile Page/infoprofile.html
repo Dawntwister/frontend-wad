@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme = "light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Information</title>
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../stylesheet_master.css">
+    
+    <!-- VUE -->
+    <script src="https://unpkg.com/vue@next"></script>
+    
+    <!-- Theme switching functionality -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../themeswitch.js"></script>
+    <!-- End theme switching functionality -->
+    
+    <!-- ENTER ADDITIONAL SCRIPTS-->
+
+    <!-- END ADDITIONAL SCRIPTS -->
+</head>
+<body>
+<div id="root">
+    <fg_top_green></fg_top_green>
+    <fg_top_grey></fg_top_grey>
+    <!--  -->
+    <!-- ENTER CONTENT-->
+    <!--  -->
+
+
+    <!-- Edit Profile Content -->
+    <div class="container-xl px-4 mt-4">
+        <!-- Account page navigation
+        <nav class="nav nav-borders">
+            <a class="nav-link active ms-0" href="editprofile.html" target="__blank" style="color: white;">Profile</a>
+            <a class="nav-link" href="#" target="__blank" style="color: white;">Billing</a>
+            <a class="nav-link" href="#" target="__blank" style="color: white;">Security</a>
+        </nav>-->
+        <hr class="mt-0 mb-4" style="border-color: white;">
+        <div class="row">
+            <div class="col-xl-4">
+                <!-- Profile picture card-->
+                <div class="card mb-4 mb-xl-0">
+                    <div class="card-header">Profile Picture</div>
+                    <div class="card-body text-center">
+                        <!-- Profile picture image-->
+                        <img class="img-account-profile rounded-circle mb-2" src="../images/profile/zhanhuiprofile.jpg" alt="">
+                        <!-- Profile picture help block-->
+                        <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                        <!-- Profile picture upload button-->
+                        <button class="btn btn-success" type="button">Upload new image</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8">
+                <!-- Account details card-->
+                <div class="card mb-4">
+                    <div class="card-header">Account Details</div>
+                    <div class="card-body">
+                        <form>
+                            <!-- Form Group (username)-->
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputUsername">Username:</label>
+                            </div>
+                            <!-- Form Row-->
+                            <div class="row gx-3 mb-3">
+                                <!-- Form Group (first name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputFirstName">First name:</label>
+
+                                </div>
+                                <!-- Form Group (last name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputLastName">Last name:</label>
+
+                                </div>
+                            </div>
+
+                            <!-- Form Group (email )-->
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputEmailAddress"> Email: </label>
+                            </div>
+
+                            <!-- Form Group (Address)-->
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputAddress">Address:</label>
+
+                            </div>
+
+                            <!-- Form Row-->
+                            <div class="row gx-3 mb-3">
+                                <!-- Form Group (phone number)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputPhone">Phone number:</label>
+
+                                </div>
+                                <!-- Form Group (birthday)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputBirthday">Birthday:</label>
+
+                                </div>
+                            </div>
+                            <!-- Save changes button-->
+                            <button class="btn btn-success" id="saveChangesBtn">Edit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--  -->
+    <!-- END CONTENT -->
+    <!--  -->
+    <fg_bot></fg_bot>
+</div>
+</body>
+
+<!-- ENTER ADDITIONAL SCRIPTS -->
+
+<!-- END ADDITIONAL SCRIPTS -->
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/color-modes.js"></script>
+<script src="../components.vue"></script>
+</html>

@@ -68,6 +68,10 @@
         border-radius: 1.5rem;
         color: black;
     }
+    #usernameDisplay {
+        font-weight: bold;
+        color: #000;
+    }
     /* home.html styling */
     /* This style helps the carousel hover colour functionality */
     .hover {
@@ -178,6 +182,11 @@
             flex: 1;
             border-bottom: 1px solid #ffffff;
         }
+
+    #usernameDisplay {
+            font-weight: bold;
+            color: #ebdcdcc8;
+    }
         /* home.html styling */
     /* This style helps the carousel hover colour functionality */
     .hover {
