@@ -111,7 +111,7 @@ root.component("fg_top_grey",{
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav w-100 d-flex justify-content-between">
                     <li class="nav-item">
-                        <a class="nav-item nav-link" href="../home/home.html" active>Home</a>
+                        <a class="nav-item nav-link" href="../index.html" active>Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-item nav-link" href="../Product/productdisplay.html">Products</a>
