@@ -25,7 +25,7 @@ root.component("fg_top_green",{
         <div class="py-1 greencontainer">
         <div class="d-flex flex-wrap align-items-center">
             <!-- Logo Column on Small Viewport -->
-            <div class="col-12 col-md-7 mb-2 mb-md-0 text-center">
+            <div class="col-12 col-md-7 mb-2 mb-md-0 text-center text-md-start">
                 <a href="../home/home.html" class=" justify-content-center justify-content-md-start text-decoration-none">
                     <img src="../images/logo/logo.png" alt="" class="w-25" >
                 </a>
