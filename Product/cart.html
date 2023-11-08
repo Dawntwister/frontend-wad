@@ -120,6 +120,11 @@
             <!-- Total water will be displayed here -->
         </div>
     </div>
+
+    <div class="btn-container" style="margin:auto;">
+        <button id="clearCartButton" class="btn btn-danger" style="margin-top:2%; margin-right:1%;" href="emptycart.html">Clear Cart</button>
+    <button id="clearCartButton" class="btn btn-success" style="margin-top:2%; margin-left:1%;">Checkout</button>
+    </div>
     <!--  -->
     <!-- END CONTENT -->
     <!--  -->
@@ -127,11 +132,19 @@
 </div>
 
 <script>
+    const clearCartButton = document.getElementById('clearCartButton');
+
+    // Add a click event listener to the "Clear Cart" button
+    clearCartButton.addEventListener('click', function () {
+        // Navigate to the "emptycart.html" page
+        window.location.href = 'emptycart.html';
+    });
+
     const cartItems = document.getElementById('cart-items');
     const totalCarbonFootprint = document.getElementById('total-carbon-footprint');
     const totalWaste = document.getElementById('total-waste');
     const totalWater = document.getElementById('total-water');
-    const cart = JSON.parse(localStorage.getItem('cart'));
+    let cart = JSON.parse(localStorage.getItem('cart'));
 
     let grandTotalCarbonFootprint = 0;
     let grandTotalWaste = 0;
@@ -204,8 +217,8 @@
     totalWaterCell.textContent = `Grand Total Water: ${grandTotalWaterRounded} liters`;
     totalWater.appendChild(totalWaterCell);
     grandTotalContainer.appendChild(totalWaterCell);
-    </script>
 </script>
+
 </body>
 
 <!-- ENTER ADDITIONAL SCRIPTS -->
