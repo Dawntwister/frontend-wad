@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "functions": [
     {
       "source": "functions",
@@ -53,6 +54,11 @@
       ]
     }
   ],
+=======
+  "functions": {
+    "source": "functions"
+  },
+>>>>>>> e8a3631540be754d4a932892b007b681e18505e2
   "firestore": {
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"

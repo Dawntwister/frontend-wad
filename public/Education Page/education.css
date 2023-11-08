@@ -145,22 +145,7 @@
       display: flex;
       flex-wrap: wrap;
     }
-    
-    .col-12 {
-      flex: 0 0 100%; /* Default to 1 column at full width */
-    }
-    
-    @media (min-width: 575px) {
-      .col-12 {
-          flex: 0 0 100%; /* 2 columns at 575px */
-      }
-    }
-    
-    @media (min-width: 992px) {
-      .col-12 {
-          flex: 0 0 50%; /* 3 columns at 992px */
-      }
-    }
+
     
     .video-card {
       position: relative;
@@ -242,22 +227,6 @@
     .row {
       display: flex;
       flex-wrap: wrap;
-    }
-    
-    .col-12 {
-      flex: 0 0 100%; /* Default to 1 column at full width */
-    }
-    
-    @media (min-width: 575px) {
-      .col-12 {
-          flex: 0 0 100%; /* 2 columns at 575px */
-      }
-    }
-    
-    @media (min-width: 992px) {
-      .col-12 {
-          flex: 0 0 50%; /* 3 columns at 992px */
-      }
     }
     
     .game-card {
@@ -599,117 +568,120 @@
     }
     /* End Light Mode */
 
-
-
     /* Dark Mode */
     [data-bs-theme="dark"] {
-    --bs-body-color: var(--bs-white);
-    --bs-body-color-rgb: #{to-rgb($white)};
-    --bs-body-bg: var(--bs-darkgreen);
-    --bs-body-bg-rgb: #{to-rgb($darkgreen)};
-    --bs-tertiary-bg: #{$blue-600};
-    
-    .dropdown-menu{ 
-        background-color: #103315; 
-    }
-    
-    .darkgreencontainer{
-        background-color: black;
-        color: white;
-    }
-    .greencontainer{
-        background-color: #103315;
-        color: white;
-    }
-    .lightgreencontainer{
-        background-color: black;
-        color: white;
-    }
-    .whitecontainer{
-        background-color: #121212;
-        color: white;
-    }
-    
-    .navbar-top{
-        background-color: #121212;
-    }
-    
-    
-    .navbar .nav-link{
-        color: white;
-    }
-    
-    .navbar .nav-link:hover{
-        color: #74b9a0;
-    }
-    
-    .nav-top:hover{
-        color: black;
-    }
-    
-    .nav-link{
-        color: white;
-    }
-    
-    .nav-top:focus{
-        color: white;
-    }
-    .btn-success-outline{
-        color: white;
-    }
-    .btn-success-outline:hover{
-        color: black;
-    }
-    .btn-success-outline:focus{
-        color: white;
-    }
-    .container-payment{
-        border: 10px solid;
-        background-color: #505050;
-        border-color: black;
-        border-radius: 1.5rem;
-        color: black;
-    }
-    
-    /*Portion for Sign up & Login */
-    .separator::before,
-        .separator::after {
-            content: '';
-            flex: 1;
-            border-bottom: 1px solid #ffffff;
-        }
-        /* home.html styling */
-    /* This style helps the carousel hover colour functionality */
-    .hover {
-        color: #0000;
-        background: 
-            linear-gradient(90deg,#41804F 50%,white 0) 
-            var(--_p,100%)/200% no-repeat;
-        -webkit-background-clip: text;
-                background-clip: text;
-        transition: .4s;
-        }
-        .hover:hover {
-        --_p: 0%;
-        }
-        .btn-outline-light {
-            color: #0000;
-            border-width: 2px;
-            font-weight: bold;
-            border-color: white;
-            background: 
-                linear-gradient(90deg,#41804F 50%,white 0) 
-                var(--_p,100%)/200% no-repeat;
-            -webkit-background-clip: text;
-                    background-clip: text;
-            transition: .4s;
-            }
-            .btn-outline-light:hover {
-            --_p: 0%;
-            border: 2px solid #41804F
-            }
-        /* end home.html styling */    
-        .tab {
+      --bs-body-color: var(--bs-white);
+      --bs-body-color-rgb: #{to-rgb($white)};
+      --bs-body-bg: var(--bs-darkgreen);
+      --bs-body-bg-rgb: #{to-rgb($darkgreen)};
+      --bs-tertiary-bg: #{$blue-600};
+      
+      .dropdown-menu{ 
+          background-color: #103315; 
+      }
+      
+      .darkgreencontainer{
+          background-color: black;
+          color: white;
+      }
+      .greencontainer{
+          background-color: #103315;
+          color: white;
+      }
+      .lightgreencontainer{
+          background-color: black;
+          color: white;
+      }
+      .whitecontainer{
+          background-color: #121212;
+          color: white;
+      }
+      
+      .navbar-top{
+          background-color: #121212;
+      }
+      
+      
+      .navbar .nav-link{
+          color: white;
+      }
+      
+      .navbar .nav-link:hover{
+          color: #74b9a0;
+      }
+      
+      .nav-top:hover{
+          color: black;
+      }
+      
+      .nav-link{
+          color: white;
+      }
+      
+      .nav-top:focus{
+          color: white;
+      }
+      .btn-success-outline{
+          color: white;
+      }
+      .btn-success-outline:hover{
+          color: black;
+      }
+      .btn-success-outline:focus{
+          color: white;
+      }
+      .container-payment{
+          border: 10px solid;
+          background-color: #505050;
+          border-color: black;
+          border-radius: 1.5rem;
+          color: black;
+      }
+      
+      /*Portion for Sign up & Login */
+      .separator::before,
+          .separator::after {
+              content: '';
+              flex: 1;
+              border-bottom: 1px solid #ffffff;
+          }
+  
+      #usernameDisplay {
+              font-weight: bold;
+              color: #ebdcdcc8;
+      }
+          /* home.html styling */
+      /* This style helps the carousel hover colour functionality */
+      .hover {
+          color: #0000;
+          background: 
+              linear-gradient(90deg,#41804F 50%,white 0) 
+              var(--_p,100%)/200% no-repeat;
+          -webkit-background-clip: text;
+                  background-clip: text;
+          transition: .4s;
+          }
+          .hover:hover {
+          --_p: 0%;
+          }
+          .btn-outline-light {
+              color: #0000;
+              border-width: 2px;
+              font-weight: bold;
+              border-color: white;
+              background: 
+                  linear-gradient(90deg,#41804F 50%,white 0) 
+                  var(--_p,100%)/200% no-repeat;
+              -webkit-background-clip: text;
+                      background-clip: text;
+              transition: .4s;
+              }
+              .btn-outline-light:hover {
+              --_p: 0%;
+              border: 2px solid #41804F
+              }
+          /* end home.html styling */   
+          .tab {
             display: flex;
             width: 80%;
             margin: 0 auto; 
@@ -755,22 +727,7 @@
           display: flex;
           flex-wrap: wrap;
         }
-        
-        .col-12 {
-          flex: 0 0 100%; /* Default to 1 column at full width */
-        }
-        
-        @media (min-width: 575px) {
-          .col-12 {
-              flex: 0 0 100%; /* 2 columns at 575px */
-          }
-        }
-        
-        @media (min-width: 992px) {
-          .col-12 {
-              flex: 0 0 50%; /* 3 columns at 992px */
-          }
-        }
+    
         
         .video-card {
           position: relative;
@@ -845,27 +802,13 @@
               font-size: 12px; /* Further adjust font size for even larger screens */
           }
         }
+        
+        /* styling gamecard */
         /* Video card styling */
         
         .row {
           display: flex;
           flex-wrap: wrap;
-        }
-        
-        .col-12 {
-          flex: 0 0 100%; /* Default to 1 column at full width */
-        }
-        
-        @media (min-width: 575px) {
-          .col-12 {
-              flex: 0 0 100%; /* 2 columns at 575px */
-          }
-        }
-        
-        @media (min-width: 992px) {
-          .col-12 {
-              flex: 0 0 50%; /* 3 columns at 992px */
-          }
         }
         
         .game-card {
@@ -1027,139 +970,138 @@
           }
         }
         /* styling explore cards */
-    #explore-cards {
-      margin: auto;
-      width: 80%;
-    }
-    
-    .ecards-container {
-      display: grid;
-      grid-template-columns: 1fr; /* Default to a single column layout */
-      gap: 5rem; /* Add some gap between cards */
-    }
-    
-    .ecards {
-      display: flex;
-      flex-wrap: wrap;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    
-    .ecards_item {
-      display: flex;
-      padding-bottom: 2rem;
-      width: 80%; /* Use 100% width for consistent card width */
-    }
-
-    .ecards_item img {
-        border-radius: 0; /* Remove any border-radius on images inside the cards */
-        display: block; /* Ensure images take up the entire card space */
-        width: 100%; /* Make the images take the full width of the parent container */
-        height: 100%; /* Make the images take the full height of the parent container */
-      }
-    
-    
-    
-    /* Media query for 992px and above */
-    @media (min-width: 992px) {
+        #explore-cards {
+          margin: auto;
+          width: 80%;
+        }
+        
+        .ecards-container {
+          display: grid;
+          grid-template-columns: 1fr; /* Default to a single column layout */
+          gap: 5rem; /* Add some gap between cards */
+        }
+        
+        .ecards {
+          display: flex;
+          flex-wrap: wrap;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        
         .ecards_item {
-            width: 50%; /* Two columns */
+          display: flex;
+          padding-bottom: 2rem;
+          width: 80%; /* Use 100% width for consistent card width */
+        }
+    
+        .ecards_item img {
+            border-radius: 0; /* Remove any border-radius on images inside the cards */
+            display: block; /* Ensure images take up the entire card space */
+            width: 100%; /* Make the images take the full width of the parent container */
+            height: 100%; /* Make the images take the full height of the parent container */
+          }
+        
+        
+        
+        /* Media query for 992px and above */
+        @media (min-width: 992px) {
+            .ecards_item {
+                width: 50%; /* Two columns */
+            }
+            }
+        
+        /* Media query for 575px and below */
+        @media (max-width: 575px) {
+        .ecards_item {
+            width: 100%; /* One column */
         }
         }
-    
-    /* Media query for 575px and below */
-    @media (max-width: 575px) {
-    .ecards_item {
-        width: 100%; /* One column */
-    }
-    }
-    
-    .explorecontainer {
-      display: flex;
-      justify-content: center;
-      height: auto;
-      margin:auto;
-    }
-    
-    .img-wrapper, .img-detail {
-      position: relative;
-      width: 400px;
-      height: 400px;
-    }
-    
-    .img-wrapper {
-      box-shadow: 0 30px 20px -20px rgba(88, 85, 85, 0.8);
-      overflow: hidden;
-      padding: 20px;
-    }
-    
-    .img-detail {
-        position: absolute;
-        top: 301px; 
-        left: 0;
-        right: 0; 
-        padding: 1.8rem;
-        background-color: #121212;
-        transition: top 0.4s;
-        display: flex;
-        flex-direction: column; 
-        align-items: center; 
+        
+        .explorecontainer {
+          display: flex;
+          justify-content: center;
+          height: auto;
+          margin:auto;
+        }
+        
+        .img-wrapper, .img-detail {
+          position: relative;
+          width: 400px;
+          height: 400px;
+        }
+        
+        .img-wrapper {
+          box-shadow: 0 30px 20px -20px rgba(88, 85, 85, 0.8);
+          overflow: hidden;
+          padding: 20px;
+        }
+        
+        .img-detail {
+          position: absolute;
+          top: 301px; 
+          left: 0;
+          right: 0; 
+          padding: 1.8rem;
+          background-color: #121212;
+          transition: top 0.4s;
+          display: flex;
+          flex-direction: column; 
+          align-items: center; 
+        }
+        
+        .img-detail .content {
+            flex-grow: 1; /* Grow to take available vertical space */
+            text-align: center;
+        }
+        
+        .img-detail .content button {
+            margin-top: 1rem; /* Add some top margin to center the button vertically */
+            /* Other button styles */
+        }
+        
+        .img-wrapper:hover > .img-detail {
+            top: 0;
+            transition: top 0.4s;
+        }
+        
+        .img-wrapper:hover > .img-detail {
+            top: 0;
+            transition: top 0.4s;
+        }
+        
+        .header {
+          display: flex;
+        }
+        
+        
+        .ecard_btn {
+          position: relative;
+          bottom: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 15px 30px;
+          font-size: 18px;
+          background-color: transparent;
+          color: #ffffff;
+          font-size: 20px;
+          border: 1px solid #ffffff;
+          transition: all 0.3s;
+        }
+      
+      .card_btn:hover {
+          border: 2px solid #008756; 
+          color: #008756; 
+          background-color: transparent;; 
       }
-    
-    .img-detail .content {
-        flex-grow: 1; /* Grow to take available vertical space */
-        text-align: center;
-    }
-    
-    .img-detail .content button {
-        margin-top: 1rem; /* Add some top margin to center the button vertically */
-        /* Other button styles */
-    }
-    
-    .img-wrapper:hover > .img-detail {
-        top: 0;
-        transition: top 0.4s;
-    }
-    
-    .img-wrapper:hover > .img-detail {
-        top: 0;
-        transition: top 0.4s;
-    }
-    
-    .header {
-      display: flex;
-    }
-    
-    
-    .ecard_btn {
-        position: relative;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 15px 30px;
-        font-size: 18px;
-        background-color: transparent;
-        color: #ffffff;
-        font-size: 20px;
-        border: 1px solid #ffffff;
-        transition: all 0.3s;
-      }
-    
-    .card_btn:hover {
+      
+      .ecard_btn:hover {
         border: 2px solid #008756; 
         color: #008756; 
         background-color: transparent;; 
-    }
+      }
     
-    .ecard_btn:hover {
-      border: 2px solid #008756; 
-      color: #008756; 
-      background-color: transparent;; 
-    }
-    
-        
-        
+      
         /* Style the tab buttons */
         .tab {
             display: flex;
@@ -1203,23 +1145,7 @@
         .tab button:hover {
             background-color: #103315; /* Background color when hovered */
             transition: background-color 0.3s; /* Smooth transition */
-        }
-    }
-    /* End Dark Mode */
-
-/* Featurettes */
-.featurette-divider {
-    margin: 5rem 0; /* Space out the Bootstrap <hr> more */
-}
-
-/* Thin out the marketing headings */
-/* rtl:begin:remove */
-
-.featurette-heading {
-    letter-spacing: -.05rem;
-}
-/* End Featurettes */
-
-img{
-    border-radius: 15px;
-}
+        } 
+  
+      }
+      /* End Dark Mode */

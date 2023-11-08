@@ -170,14 +170,14 @@
         let grandTotalWaste = 0;
         let grandTotalWater = 0;
 
-        if (cart) {
-            cart.forEach((item) => {
-                const row = document.createElement('tr');
-
-                const itemImage = document.createElement('img');
-                itemImage.src = item.image;
-                const imageCell = document.createElement('td');
-                imageCell.appendChild(itemImage);
+    if (cart) {
+        cart.forEach((item) => {
+            const row = document.createElement('tr');
+            
+            const itemImage = document.createElement('img');
+            itemImage.src = item.image;
+            const imageCell = document.createElement('td');
+            imageCell.appendChild(itemImage);
 
                 const itemName = document.createElement('td');
                 itemName.textContent = item.name;
@@ -213,9 +213,9 @@
                 row.appendChild(itemQuantity);
                 row.appendChild(itemTotalPrice);
 
-                cartItems.appendChild(row);
-            });
-        }
+            cartItems.appendChild(row);
+        });
+    }
 
         const grandTotalContainer = document.getElementById('grand-total-container');
 
