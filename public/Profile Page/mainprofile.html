@@ -71,10 +71,7 @@
                     <div class="container align-items-center">
                         <a href="infoprofile.html"><button type="button"
                             class="btn btn-primary flex-grow-1" id="displayProfileButton" style="margin: 10px;">Details</button></a>
-                    <!-- Read data from  firebase-->
-                    <button type="button" class="btn btn-danger" id="signoutbutton"
-                            style="margin: 10px;">Sign Out</button>
-
+                    <button type="button" class="btn btn-danger" onclick="logout()" style="margin: 10px;">Sign Out</button>
                     </div>
 
 
@@ -247,6 +244,17 @@
     let lname = UserInfo.lastname;
 
     document.getElementById("usernameDisplay").innerText = fname + " " + lname;
+
+    // Function to call out log out
+    function logout(){
+        // Remove user credentials and user info from session storage
+        console.log("Signout function called");
+        sessionStorage.removeItem("user-creds");
+        sessionStorage.removeItem("user-info");
+        // Redirect the user to the login page
+        window.location.href = "../Login Signup Page/login.html";
+        console.log("Signout function called");
+    }
 </script>
 <!-- END ADDITIONAL SCRIPTS -->
 
