@@ -150,7 +150,7 @@
     let grandTotalWaste = 0;
     let grandTotalWater = 0;
 
-    if (cart) {
+    if (cart && cart.length > 0){
         cart.forEach((item) => {
             const row = document.createElement('tr');
             
@@ -195,6 +195,11 @@
 
             cartItems.appendChild(row);
         });
+    } else {
+        // Handle the case when the cart is empty
+        const emptyCartMessage = document.createElement('p');
+        emptyCartMessage.textContent = 'Your cart is empty.';
+        cartItems.appendChild(emptyCartMessage);
     }
 
     const grandTotalContainer = document.getElementById('grand-total-container');

@@ -154,40 +154,65 @@
     }
 
     function filterProductsByType(type) {
-        const productGrid = document.getElementById('product-grid');
-        productGrid.innerHTML = ''; // Clear the existing product grid
+    const productGrid = document.getElementById('product-grid');
+    productGrid.innerHTML = ''; // Clear the existing product grid
 
-        for (const key in list_objects) {
-            if (list_objects.hasOwnProperty(key)) {
-                const item = list_objects[key];
+    for (const key in list_objects) {
+        if (list_objects.hasOwnProperty(key)) {
+            const item = list_objects[key];
 
-                if (type === 'all' || item.type === type) {
-                    // Create and display product items that match the selected type
-                    const productItem = document.createElement('div');
-                    productItem.classList.add('product-item');
+            if (type === 'all' || item.type === type) {
+                // Create and display product items that match the selected type
+                const productItem = document.createElement('div');
+                productItem.classList.add('product-item');
 
-                    const productImage = document.createElement('img');
-                    productImage.classList.add('product-image');
-                    productImage.src = item.image; // Assuming item.image is the image URL
-                    productImage.alt = item.name;
+                const productImage = document.createElement('img');
+                productImage.classList.add('product-image');
+                productImage.src = item.image; // Assuming item.image is the image URL
+                productImage.alt = item.name;
 
-                    const productName = document.createElement('div');
-                    productName.classList.add('product-name');
-                    productName.textContent = item.name;
+                const productName = document.createElement('div');
+                productName.classList.add('product-name');
+                productName.textContent = item.name;
 
-                    const productPrice = document.createElement('div');
-                    productPrice.classList.add('product-price');
-                    productPrice.textContent = `$${item.price.toFixed(2)}`;
+                const productPrice = document.createElement('div');
+                productPrice.classList.add('product-price');
+                productPrice.textContent = `$${item.price.toFixed(2)}`;
 
-                    productItem.appendChild(productImage);
-                    productItem.appendChild(productName);
-                    productItem.appendChild(productPrice);
+                const productFootprint = document.createElement('div');
+                productFootprint.classList.add('product-footprint');
+                productFootprint.textContent = `Carbon Footprint: ${item['Carbon Footprint']} kg CO₂`;
 
-                    productGrid.appendChild(productItem);
-                }
+                const productWaste = document.createElement('div');
+                productWaste.classList.add('product-waste');
+                productWaste.textContent = `Waste: ${item['Waste']} kg`;
+
+                const productWater = document.createElement('div');
+                productWater.classList.add('product-water');
+                productWater.textContent = `Water: ${item['Water']} liters`;
+
+                const addToCartButton = document.createElement('button');
+                addToCartButton.classList.add('add-to-cart-button');
+                addToCartButton.textContent = 'Add to Cart';
+
+                addToCartButton.addEventListener('click', () => {
+                    // Implement the logic to add the product to the cart here
+                    addToCart(item);
+                });
+
+                productItem.appendChild(productImage);
+                productItem.appendChild(productName);
+                productItem.appendChild(productPrice);
+                productItem.appendChild(productFootprint);
+                productItem.appendChild(productWaste);
+                productItem.appendChild(productWater);
+                productItem.appendChild(addToCartButton);
+
+                productGrid.appendChild(productItem);
             }
         }
     }
+}
 
     // Function to handle dropdown change event
     const productTypeDropdown = document.getElementById('product-type');
