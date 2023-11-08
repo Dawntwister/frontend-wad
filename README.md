@@ -1,4 +1,5 @@
 # frontend-wad
-Responsive Web Application Development on HTML, CSS &amp; JavaScript
+WADII G1T3 
+This is the GitHub repository for our group's project: Farmer's Ground
 
-Usage of Template (For WAD2 Group Internal)
+Team Members: Aaron Wong, Ng Zhan Hui, Regin Ng, Joel Sng
