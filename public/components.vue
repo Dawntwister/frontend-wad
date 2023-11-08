@@ -26,7 +26,7 @@ root.component("fg_top_green",{
         <div class="d-flex flex-wrap align-items-center">
             <!-- Logo Column on Small Viewport -->
             <div class="col-12 col-md-7 mb-2 mb-md-0 text-center text-md-start">
-                <a href="../home/home.html" class=" justify-content-center justify-content-md-start text-decoration-none">
+                <a href="../index.html" class=" justify-content-center justify-content-md-start text-decoration-none">
                     <img src="../images/logo/logo.png" alt="" class="w-25" >
                 </a>
             </div>
@@ -85,7 +85,7 @@ root.component("fg_top_green",{
                           </div>
                     </li>
                     <li>
-                        <a href="../cart/cart.html" class="nav-link nav-top">
+                        <a href="../Product/cart.html" class="nav-link nav-top">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
                                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                             </svg>
@@ -117,9 +117,6 @@ root.component("fg_top_grey",{
                         <a class="nav-item nav-link" href="../Product/productdisplay.html">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-item nav-link" href="../vendors/vendors.html">Vendors</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-item nav-link" href="../Event Page/events.html">News & Events</a>
                     </li>
                     <li class="nav-item">
@@ -147,13 +144,13 @@ root.component("fg_bot",{
                     <img src="../images/logo/logo_dark.png" alt="Company Logo" class="bi me-2 img-fluid">
                 </a>
                 <ul class="list-unstyled d-flex justify-content-center">
-                    <li class="mx-4"><a href="../home/home.html" class="link-body-emphasis" style="color: #103315;">
+                    <li class="mx-4"><a href="../index.html" class="link-body-emphasis" style="color: #103315;">
                         <i width="24" height="24" class="bi bi-facebook"></i>
                     </a></li>
-                    <li class="mx-4"><a href="../home/home.html" class="link-body-emphasis" style="color: #103315;">
+                    <li class="mx-4"><a href="../index.html" class="link-body-emphasis" style="color: #103315;">
                         <i width="24" height="24" class="bi bi-twitter"></i>
                     </a></li>
-                    <li class="mx-4"><a href="../home/home.html" class="link-body-emphasis" style="color: #103315;">
+                    <li class="mx-4"><a href="../index.html" class="link-body-emphasis" style="color: #103315;">
                         <i width="24" height="24" class="bi bi-linkedin"></i>
                     </a></li>
                 </ul>
@@ -170,7 +167,6 @@ root.component("fg_bot",{
                 <h5>Our Offerings</h5>
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2"><a href="../Product/productdisplay.html" class="nav-link p-0 text-body-secondary">Products</a></li>
-                    <li class="nav-item mb-2"><a href="../Vendors/vendors.html" class="nav-link p-0 text-body-secondary">Vendors</a></li>
                 </ul>
             </div>
     
