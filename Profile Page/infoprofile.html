@@ -61,12 +61,13 @@
                         </div>
                     </div>
                 </div>
+                <form id="MainForm">
                 <div class="col-xl-8" id="app">
                     <!-- Account details card-->
                     <div class="card mb-4">
                         <div class="card-header">Account Details</div>
                         <div class="card-body">
-                            <form id="MainForm">
+                            
                                 <!-- Form Group (username)-->
                                 <div class="row mb-3">
                                     <div class="col-12">
@@ -133,11 +134,11 @@
                                 </div>
                                 <!-- Save changes button-->
                                 <button class="btn btn-success" @click="updateFirestore"
-                                    id="saveChangesBtn">Edit</button>
-                            </form>
+                                    id="saveChangesBtn">Save Changes</button>
                         </div>
                     </div>
                 </div>
+                </form>
             </div>
         </div>
 
@@ -200,47 +201,6 @@
     document.getElementById("phoneInput").setAttribute('value', phone_cur);
     document.getElementById("bdayInput").setAttribute('value', bday_cur);
 
-
-    // const vm = Vue.createApp({
-    //     data() {
-    //         return {
-    //             username: "",
-    //             firstname: "",
-    //             lastname: "",
-    //             address: "",
-    //             phonenumber: "",
-    //             birthday: ""
-    //         };
-    //     },
-    //     methods: {
-    //         updateFirestore() {
-    //             const userRef = doc(db, "users", JSON.parse(sessionStorage.getItem("user-creds")).uid);
-
-    //             // Create an object with the updated values
-    //             const updates = {
-    //                 username: this.username,
-    //                 firstname: this.firstname,
-    //                 lastname: this.lastname,
-    //                 phonenumber: this.phonenumber,
-    //                 address: this.address,
-    //                 birthday: this.birthday
-    //             };
-
-    //             // Update the Firestore document
-    //             console.log(updates)
-    //             updateDoc(userRef, updates)
-    //                 .then(() => {
-    //                     console.log("Document updated successfully");
-    //                     // Update the session storage with the new user info
-    //                     sessionStorage.setItem("user-info", JSON.stringify(updates));
-    //                 })
-    //                 .catch((error) => {
-    //                     console.error("Error updating document:", error);
-    //                 });
-    //         }
-    //     }
-    // }).mount('#MainForm');
-
     let username = document.getElementById('usernameInput');
     let firstname = document.getElementById('fnameInput');
     let lastname = document.getElementById('lnameInput');
@@ -252,46 +212,42 @@
     let MainForm = document.getElementById("MainForm")
 
     MainForm.addEventListener("submit", async (e) => {
-        var ref = doc(db, "users", JSON.parse(sessionStorage.getItem("user-creds")).uid);
+    e.preventDefault(); // Prevent the default form submission behavior
 
-        try {
-            await updateDoc(ref, {
-                username: deleteField(),
-                firstname: deleteField(),
-                lastname: deleteField(),
-                email: deleteField(),
-                phonenumber: deleteField(),
-                address: deleteField(),
-                birthday: deleteField(),
-            });
+    var ref = doc(db, "users", JSON.parse(sessionStorage.getItem("user-creds")).uid);
 
-            sessionStorage.removeItem("user-info");
+    try {
+        await updateDoc(ref, {
+            username: username.value,
+            firstname: firstname.value,
+            lastname: lastname.value,
+            email: email.value,
+            phonenumber: phonenumber.value,
+            address: address.value,
+            birthday: birthday.value,
+        });
+        
+        // Remove this line: sessionStorage.removeItem("user-info");
+        // No need to remove the user-info from session storage
 
+        // You can update the user-info in session storage here if needed
+        // Update the session storage with the new data
+        sessionStorage.setItem("user-info", JSON.stringify({
+            username: username.value,
+            firstname: firstname.value,
+            lastname: lastname.value,
+            email: email.value,
+            phonenumber: phonenumber.value,
+            address: address.value,
+            birthday: birthday.value,
+        }));
+        console.log("Session Storage Data (user-info):",
+        sessionStorage.getItem("user-info"));
 
-
-            await setDoc(ref, {
-                username: username.value,
-                firstname: firstname.value,
-                lastname: lastname.value,
-                email: email.value,
-                phonenumber: phonenumber.value,
-                address: address.value,
-                birthday: birthday.value,
-            });
-
-            sessionStorage.setItem("user-info", JSON.stringify({
-                username: username.value,
-                firstname: firstname.value,
-                lastname: lastname.value,
-                email: email.value,
-                phonenumber: phonenumber.value,
-                address: address.value,
-                birthday: birthday.value,
-            }));
-        } catch (error) {
-            console.error("Error updating or setting the document:", error);
-        }
-    });
+    } catch (error) {
+        console.error("Error updating the document:", error);
+    }
+});
 
 
 
