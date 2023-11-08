@@ -38,6 +38,7 @@
                 grandTotalCarbonFootprint.textContent = '';
                 grandTotalWaste.textContent = '';
                 grandTotalWater.textContent = '';
+                grandTotalPrice.textContent = '';
             });
         });
 
@@ -143,6 +144,9 @@
             <div id="total-water">
                 <!-- Total water will be displayed here -->
             </div>
+            <div id="total-price">
+                <!-- Total price will be displayed here -->
+            </div>
         </div>
 
         <div class="btn-container" style="margin:auto;">
@@ -158,19 +162,20 @@
     </div>
 
     <script>
-
-
         const cartItems = document.getElementById('cart-items');
         const totalCarbonFootprint = document.getElementById('total-carbon-footprint');
         const totalWaste = document.getElementById('total-waste');
         const totalWater = document.getElementById('total-water');
+        const totalPrice = document.getElementById('total-price');
         let cart = JSON.parse(localStorage.getItem('cart'));
+        localStorage.setItem('cart', JSON.stringify(cart));
 
         let grandTotalCarbonFootprint = 0;
         let grandTotalWaste = 0;
         let grandTotalWater = 0;
-
-    if (cart) {
+        let grandTotalPrice = 0;
+    
+    if(cart) {
         cart.forEach((item) => {
             const row = document.createElement('tr');
             
@@ -188,6 +193,8 @@
                 const totalPrice = item.price * item.quantity;
                 const itemTotalPrice = document.createElement('td');
                 itemTotalPrice.textContent = `$${totalPrice.toFixed(2)}`;
+
+                grandTotalPrice += totalPrice;
 
                 const totalCarbonFootprintPerItem = item['Carbon Footprint'] * item.quantity;
                 const itemCarbonFootprint = document.createElement('td');
@@ -221,6 +228,7 @@
 
         const grandTotalWasteRounded = grandTotalWaste.toFixed(2);
         const grandTotalWaterRounded = grandTotalWater.toFixed(2);
+        const grandTotalPriceRounded = grandTotalPrice.toFixed(2);
         const grandTotalCarbonFootprintRounded = grandTotalCarbonFootprint.toFixed(2);
 
         const totalCarbonFootprintCell = document.createElement('div');
@@ -237,6 +245,12 @@
         totalWaterCell.textContent = `Grand Total Water: ${grandTotalWaterRounded} liters`;
         totalWater.appendChild(totalWaterCell);
         grandTotalContainer.appendChild(totalWaterCell);
+
+        const totalPriceCell = document.createElement('div');
+        totalPriceCell.textContent = `Grand Total Price: $${grandTotalPriceRounded}`;
+        totalPrice.appendChild(totalPriceCell);
+        grandTotalContainer.appendChild(totalPriceCell);
+
     </script>
 
 </body>

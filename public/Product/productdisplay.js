@@ -1,4 +1,4 @@
-const cart = [];
+cart = []
 
 function addToCart(product) {
     const existingProduct = cart.find((p) => p.id === product.id);
