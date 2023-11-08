@@ -1,7 +1,8 @@
 {
   "projects": {
     "default": "farmers-ground---wad-2",
-    "staging": "farmers-ground---wad-2"
+    "staging": "farmers-ground---wad-2",
+    "testdrivedevelopment": "farmers-ground---wad-2"
   },
   "targets": {},
   "etags": {}
